@@ -3,9 +3,9 @@ import AsyncSelect from 'react-select/async';
 
 const SearchBar = () => {
 
-  fetch('https://argent-2021.netlify.app/.netlify/functions/searchTickers')
-    .then(res => res.json())
-    .then(res => console.log(res))
+  fetch('/.netlify/functions/searchTickers')
+    .then(res => res.text())
+    .then(res => console.log(res));
 
   return (
     <AsyncSelect 

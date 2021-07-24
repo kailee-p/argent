@@ -1,10 +1,8 @@
-import { Handler } from '@netlify/functions'
+import { HandlerCallback, HandlerContext, HandlerEvent } from '@netlify/functions'
 
-const searchTickers: Handler = async (event, context) => {
-  return {
+exports.handler = function (event: HandlerEvent, context: HandlerContext, callback: HandlerCallback) {
+  callback(null, {
     statusCode: 200,
-    body: JSON.stringify({ message: "test" })
-  }
-}
-
-export { searchTickers }
+    body: "Hello, World",
+  });
+};
