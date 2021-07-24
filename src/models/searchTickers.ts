@@ -1,5 +1,5 @@
 import { HandlerContext, HandlerEvent } from '@netlify/functions'
-import fetch, { Body } from "node-fetch";
+import fetch from "node-fetch";
 
 interface ticker {
   active: boolean,
