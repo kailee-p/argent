@@ -74,7 +74,9 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
             />
             <ListItemSecondaryAction>
               <IconButton edge="end" aria-label="got to company website">
-                <LaunchIcon />
+                <a href={url}>
+                  <LaunchIcon />
+                </a>
               </IconButton>
             </ListItemSecondaryAction>          
           </ListItem>
