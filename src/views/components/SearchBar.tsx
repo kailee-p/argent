@@ -1,22 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useHistory, Link } from 'react-router-dom';
 import Autocomplete from 'react-autocomplete';
 import { searchControllers } from '../../controllers/searchControllers';
 
-const SearchBar = () => {
-  //state to hold search query
-  const [searchQuery, setSearchQuery] = useState('');
-  //state to hold array of search results returned from API call
-  const [searchResults, setSearchResults] = useState([]);
-  //state to hold selected query
-  const [selectedTicker, setSelectedTicker] = useState('');
+type SearchBarProps = {
+  searchQuery: string,
+  setSearchQuery:  React.Dispatch<React.SetStateAction<string>>,
+  searchResults: string[],
+  setSearchResults: React.Dispatch<React.SetStateAction<never[]>>,
+  selectedTicker: string, 
+  setSelectedTicker: React.Dispatch<React.SetStateAction<string>>
+}
 
-  console.log(selectedTicker);
-
+const SearchBar = ({
+  searchQuery, setSearchQuery, searchResults, setSearchResults, selectedTicker, setSelectedTicker
+}: SearchBarProps) => {
+  //searches for tickers to populate dropdown upon search query change
   useEffect(() => {
     searchControllers.searchTickers(searchQuery)
       .then((res) => res.json())
       .then((res) => setSearchResults(res.nameAndTickerArr));
-  }, [searchQuery])
+  }, [searchQuery, setSearchResults])
+
+  //opens company/stock info page upon ticker selection
+  let history = useHistory();
+
+  useEffect(() => {
+    if (selectedTicker !== '') {
+      history.push(`/${selectedTicker}/info`);
+    }
+  }, [history, selectedTicker, setSelectedTicker]);
 
   return (
     <div>
@@ -24,8 +37,10 @@ const SearchBar = () => {
         getItemValue={(item) => item}
         items={searchResults}
         renderItem={(item, isHighlighted) =>
-          <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
-            {item}
+          <div 
+            key={item}
+            style={{ background: isHighlighted ? '#E0E0E0' : 'white' }} >
+              {item}
           </div>
         }
         value={searchQuery}
