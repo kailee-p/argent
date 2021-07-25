@@ -11,7 +11,7 @@ const SplashContainer = () => {
   const [searchQuery, setSearchQuery] = useState('');
   //state to hold array of search results returned from API call
   const [searchResults, setSearchResults] = useState([]);
-  //state to hold selected query
+  //state to hold selected ticker
   const [selectedTicker, setSelectedTicker] = useState('');
 
   return (

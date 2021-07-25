@@ -1,20 +1,15 @@
-import { Route, Switch } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
 import SplashContainer from './views/containers/SplashContainer';
+import CompanyAndStockInfoContainer from './views/containers/CompanyAndStockInfoContainer';
 
 import './App.css';
 
 function App() {
   return (
-    <div>
-      <Switch>
-        <Route exact path="/">
-          <SplashContainer />
-        </Route>
-        <Route exact path="/:ticker/info">
-          {/* <CompanyStockInfoContainer /> */}
-        </Route>
-      </Switch>
-    </div>
+    <Switch>
+      <Route exact path="/" component={SplashContainer} />
+      <Route exact path="/:ticker/info" component={CompanyAndStockInfoContainer} />
+    </Switch>
   );
 }
 

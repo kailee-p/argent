@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useHistory, Link } from 'react-router-dom';
 import Autocomplete from 'react-autocomplete';
 import { searchControllers } from '../../controllers/searchControllers';
 
@@ -22,9 +23,13 @@ const SearchBar = ({
   }, [searchQuery, setSearchResults])
 
   //opens company/stock info page upon ticker selection
+  let history = useHistory();
+
   useEffect(() => {
-    console.log('ticker selected');
-  }, [selectedTicker])
+    if (selectedTicker !== '') {
+      history.push(`/${selectedTicker}/info`);
+    }
+  }, [history, selectedTicker, setSelectedTicker]);
 
   return (
     <div>
