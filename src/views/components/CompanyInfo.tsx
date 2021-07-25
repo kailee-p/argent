@@ -11,8 +11,7 @@ type CompanyInfoProps = {
 }
 
 const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
-  console.log('companyInfo frontend', companyInfo); 
-  
+    
   if (companyInfo !== null && companyInfo.hasOwnProperty('info')) {
     //destructure details from companyInfo prop
     const {
@@ -74,7 +73,7 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
           <Divider variant="middle" />
           <ListItem>
             <ListItemText
-              primary="Company Website"
+              primary="Website"
               secondary={url}
             />
             <ListItemSecondaryAction>
