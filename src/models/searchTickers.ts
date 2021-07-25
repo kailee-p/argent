@@ -28,6 +28,8 @@ exports.handler = async (event: HandlerEvent, context: HandlerContext) => {
     return { statusCode: 405, body: "ERROR: Method Not Allowed"}
   }
 
+  console.log('searchTickers function called');
+
   //retrieve search input from post body
   const input = event.body;
   const searchTickersEndpoint = `https://api.polygon.io/v3/reference/tickers?search=${input}&active=true&sort=ticker&order=asc&limit=1000&apiKey=${process.env.POLYGON_API_KEY}`
@@ -36,10 +38,16 @@ exports.handler = async (event: HandlerEvent, context: HandlerContext) => {
   try {
     const response = await fetch(searchTickersEndpoint);
     const tickers: tickerResponse = await response.json();
-    console.log(tickers);
+
+    //create array of only ticker symbol and company name from results for searchbar dropdown
+    const nameAndTickerArr: string[] = [];
+    if (tickers.results !== null) {
+      tickers.results.forEach(ticker => nameAndTickerArr.push(`${ticker.ticker}: ${ticker.name}`));
+    }
+
     return {
       statusCode: 200,
-      body: JSON.stringify({ tickers })
+      body: JSON.stringify({ nameAndTickerArr })
     }
   } catch (err: unknown) {
     console.log('ERROR in searchTickers: ', err);
