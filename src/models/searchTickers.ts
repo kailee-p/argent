@@ -1,4 +1,4 @@
-import { HandlerContext, HandlerEvent } from '@netlify/functions'
+import { HandlerEvent } from '@netlify/functions'
 import fetch from "node-fetch";
 
 interface ticker {
@@ -22,7 +22,7 @@ interface tickerAPIResponse {
   results: ticker[]
 }
 
-exports.handler = async (event: HandlerEvent, context: HandlerContext) => {
+exports.handler = async (event: HandlerEvent) => {
   //post request only
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'ERROR in searchTickers Netlify function: Method Not Allowed'}

@@ -30,31 +30,47 @@ const CompanyAndStockInfoContainer = () => {
     <StockInfoContainer />
   ]
 
-  return (
-    <div>
-      <SearchBar 
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-        searchResults={searchResults}
-        setSearchResults={setSearchResults}
-        selectedTicker={selectedTicker}
-        setSelectedTicker={setSelectedTicker}
-      />
-      <Tabs
-        value={tab}
-        onChange={(_, idx) => handleTabs(idx)}
-        centered
-      >
-        <Tab value={0} label="Company">
-        </Tab>
-        <Tab value={1} label="Stock">
-        </Tab>
-      </Tabs>
-      <section>
-        {infoTabs[tab]}
-      </section>
-    </div>
-  )
+  if (selectedTicker !== '') {
+    return (
+      <div>
+        <SearchBar 
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          searchResults={searchResults}
+          setSearchResults={setSearchResults}
+          selectedTicker={selectedTicker}
+          setSelectedTicker={setSelectedTicker}
+        />
+        <Tabs
+          value={tab}
+          onChange={(_, idx) => handleTabs(idx)}
+          centered
+        >
+          <Tab value={0} label="Company">
+          </Tab>
+          <Tab value={1} label="Stock">
+          </Tab>
+        </Tabs>
+        <section>
+          {infoTabs[tab]}
+        </section>
+      </div>
+    )
+  } else {
+    return (
+      <div>
+        <SearchBar 
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          searchResults={searchResults}
+          setSearchResults={setSearchResults}
+          selectedTicker={selectedTicker}
+          setSelectedTicker={setSelectedTicker}
+        />
+        Please search for a company name or ticker symbol above to get started.
+      </div>
+    )
+  }
 }
 
 export default CompanyAndStockInfoContainer;
