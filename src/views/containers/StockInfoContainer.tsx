@@ -1,7 +1,7 @@
 const StockInfoContainer = () => {
   return (
     <div>
-      Stock Info Container
+      Stock Info Container Placeholder
     </div>
   )
 }

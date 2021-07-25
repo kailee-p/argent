@@ -7,6 +7,7 @@ type SearchBarProps = {
   setSearchQuery:  React.Dispatch<React.SetStateAction<string>>,
   searchResults: string[],
   setSearchResults: React.Dispatch<React.SetStateAction<never[]>>,
+  selectedTicker: string,
   setSelectedTicker: React.Dispatch<React.SetStateAction<string>>
 }
 
@@ -24,11 +25,11 @@ const SearchBar = ({
   return (
     <div>
       <Autocomplete
-        getItemValue={(item) => item}
+        getItemValue={(item: string) => item}
         items={searchResults}
         renderItem={(item, isHighlighted) =>
           <div 
-            key={item}
+            key={searchResults.indexOf(item)}
             style={{ background: isHighlighted ? '#E0E0E0' : 'white' }} >
               {item}
           </div>
