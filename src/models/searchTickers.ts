@@ -48,7 +48,7 @@ exports.handler = async (event: HandlerEvent, context: HandlerContext) => {
       body: JSON.stringify({ nameAndTickerArr })
     }
   } catch (err: unknown) {
-    console.log('ERROR in searchTickers: ', err);
+    console.log('ERROR in searchTickers Netlify function: ', err);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: 'Failed to search tickers' })

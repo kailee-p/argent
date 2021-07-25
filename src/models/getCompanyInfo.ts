@@ -17,24 +17,10 @@ exports.handler = async (event: HandlerEvent, context: HandlerContext) => {
     const companyInfo = await response.json();
     console.log(companyInfo);
   } catch (err: unknown) {
-    console.log(err);
+    console.log('ERROR in getCompanyInfo Netlify function: ', err);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Failed to get company info from API' })
+    }
   }
-
-  //   //create array of only ticker symbol and company name from results for searchbar dropdown
-  //   const nameAndTickerArr: string[] = [];
-  //   if (tickers.results !== null) {
-  //     tickers.results.forEach(ticker => nameAndTickerArr.push(`${ticker.ticker}: ${ticker.name}`));
-  //   }
-
-  //   return {
-  //     statusCode: 200,
-  //     body: JSON.stringify({ nameAndTickerArr })
-  //   }
-  // } catch (err: unknown) {
-  //   console.log('ERROR in searchTickers: ', err);
-  //   return {
-  //     statusCode: 500,
-  //     body: JSON.stringify({ error: 'Failed to search tickers' })
-  //   }
-  // }
 };
