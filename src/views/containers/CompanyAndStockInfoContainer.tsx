@@ -4,7 +4,7 @@ import { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import CompanyInfoContainer from './CompanyInfoContainer';
 import StockInfoContainer from './StockInfoContainer';
-import { companyInfoControllers } from '../../controllers/companyInfoController';
+// import { companyInfoControllers } from '../../controllers/companyInfoController';
 
 const CompanyAndStockInfoContainer = () => {
   // let { ticker } = useParams<{ ticker: string}>();
