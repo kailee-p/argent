@@ -1,20 +1,20 @@
-import Header from './views/components/Header';
-import SplashText from './views/components/SplashText';
-import SplashImage from './views/components/SplashImage';
-import SearchBar from './views/components/SearchBar';
-import Footer from './views/components/Footer';
+import { Route, Switch } from 'react-router';
+import SplashContainer from './views/containers/SplashContainer';
 
 import './App.css';
 
 function App() {
   return (
-    <header>
-      <Header />
-      <SplashText />
-      <SplashImage />
-      <SearchBar />
-      <Footer />
-    </header>
+    <div>
+      <Switch>
+        <Route exact path="/">
+          <SplashContainer />
+        </Route>
+        <Route exact path="/:ticker/info">
+          {/* <CompanyStockInfoContainer /> */}
+        </Route>
+      </Switch>
+    </div>
   );
 }
 
