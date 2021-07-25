@@ -1,8 +1,7 @@
 import { companyInfoForDisplay } from '../../interfaces/companyInfoInterfaces';
 
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
+import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } from '@material-ui/core';
+import LaunchIcon from '@material-ui/icons/Launch';
 
 type CompanyInfoProps = {
   companyInfo: {
@@ -18,6 +17,7 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
     //destructure details from companyInfo prop
     const {
       name,
+      url,
       symbol,
       ceo,
       hq_address,
@@ -66,6 +66,17 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
               primary="Description"
               secondary={description}
             />
+          </ListItem>
+          <ListItem>
+            <ListItemText
+              primary="Company Website"
+              secondary={url}
+            />
+            <ListItemSecondaryAction>
+              <IconButton edge="end" aria-label="got to company website">
+                <LaunchIcon />
+              </IconButton>
+            </ListItemSecondaryAction>          
           </ListItem>
         </List>
       </section>
