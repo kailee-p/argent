@@ -1,6 +1,6 @@
 import { companyInfoForDisplay } from '../../interfaces/companyInfoInterfaces';
 
-import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } from '@material-ui/core';
+import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton, Divider } from '@material-ui/core';
 import LaunchIcon from '@material-ui/icons/Launch';
 
 type CompanyInfoProps = {
@@ -37,18 +37,21 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
               secondary={ceo}
             />
           </ListItem>
+          <Divider variant="middle" />
           <ListItem>
             <ListItemText
               primary="Address"
               secondary={hq_address}
             />
           </ListItem>
+          <Divider variant="middle" />
           <ListItem>
             <ListItemText
               primary="Phone"
               secondary={phone}
             />
           </ListItem>
+          <Divider variant="middle" />
           <ListItem>
             <ListItemText
               primary="Industry"
@@ -61,12 +64,14 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
               secondary={employees}
             />
           </ListItem>
+          <Divider variant="middle" />
           <ListItem>
             <ListItemText
               primary="Description"
               secondary={description}
             />
           </ListItem>
+          <Divider variant="middle" />
           <ListItem>
             <ListItemText
               primary="Company Website"
@@ -74,7 +79,9 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
             />
             <ListItemSecondaryAction>
               <IconButton edge="end" aria-label="got to company website">
-                <LaunchIcon />
+                <a href={url}>
+                  <LaunchIcon />
+                </a>
               </IconButton>
             </ListItemSecondaryAction>          
           </ListItem>
