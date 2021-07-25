@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Autocomplete from 'react-autocomplete';
 import { searchControllers } from '../../controllers/searchControllers';
 
