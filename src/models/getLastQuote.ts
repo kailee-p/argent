@@ -16,6 +16,14 @@ exports.handler = async (event: HandlerEvent) => {
     const response = await fetch(getLastQuoteEndpoint);
     const lastQuote = await response.json();
     console.log('lastQuote', lastQuote);
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ //convert numbers to USD currency strings
+        askPrice: `$${lastQuote.results.P.toFixed(2)}`,
+        bidPrice: `$${lastQuote.results.p.toFixed(2)}`,
+        spread: `$${(lastQuote.results.P - lastQuote.results.p).toFixed(2)}` //calculate spread from bid-ask difference to 2 decimals
+      })
+    }
   } catch (err: unknown) {
     console.log('ERROR in getLastQuote Netlify function: ', err);
     return {
