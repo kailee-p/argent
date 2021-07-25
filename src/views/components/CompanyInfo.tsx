@@ -1,6 +1,6 @@
 import { companyInfoForDisplay } from '../../interfaces/companyInfoInterfaces';
 
-import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton } from '@material-ui/core';
+import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton} from '@material-ui/core';
 import LaunchIcon from '@material-ui/icons/Launch';
 
 type CompanyInfoProps = {
