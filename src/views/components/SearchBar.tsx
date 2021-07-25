@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import Autocomplete from 'react-autocomplete';
 import { searchControllers } from '../../controllers/searchControllers';
 
@@ -8,12 +7,11 @@ type SearchBarProps = {
   setSearchQuery:  React.Dispatch<React.SetStateAction<string>>,
   searchResults: string[],
   setSearchResults: React.Dispatch<React.SetStateAction<never[]>>,
-  selectedTicker: string, 
   setSelectedTicker: React.Dispatch<React.SetStateAction<string>>
 }
 
 const SearchBar = ({
-  searchQuery, setSearchQuery, searchResults, setSearchResults, selectedTicker, setSelectedTicker
+  searchQuery, setSearchQuery, searchResults, setSearchResults, setSelectedTicker
 }: SearchBarProps) => {
   //searches for tickers to populate dropdown upon search query change
   useEffect(() => {
@@ -22,15 +20,6 @@ const SearchBar = ({
       .then((res) => setSearchResults(res.nameAndTickerArr))
       .catch((err) => console.log('searchControllers.searchTickers ERROR: ', err));
   }, [searchQuery, setSearchResults])
-
-  //opens company/stock info page upon ticker selection
-  let history = useHistory();
-
-  useEffect(() => {
-    if (selectedTicker !== '') {
-      history.push(`/${selectedTicker}/info`);
-    }
-  }, [history, selectedTicker, setSelectedTicker]);
 
   return (
     <div>

@@ -1,7 +1,20 @@
-const CompanyInfoContainer = () => {
+type CompanyInfoContainerProps = {
+  selectedTicker: string
+}
+
+const CompanyInfoContainer = ({ selectedTicker }: CompanyInfoContainerProps) => {
   return (
     <div>
-      Company Info Container
+      { selectedTicker !== '' && (
+        <div>
+          {selectedTicker}
+        </div>
+      )}
+      { selectedTicker === '' && (
+        <div>
+          You have not selected a company yet.
+        </div>
+      )}
     </div>
   )
 }

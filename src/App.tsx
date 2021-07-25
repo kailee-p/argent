@@ -8,7 +8,7 @@ function App() {
   return (
     <Switch>
       <Route exact path="/" component={SplashContainer} />
-      <Route exact path="/:ticker/info" component={CompanyAndStockInfoContainer} />
+      <Route exact path="/company-search" component={CompanyAndStockInfoContainer} />
     </Switch>
   );
 }
