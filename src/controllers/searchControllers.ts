@@ -1,10 +1,8 @@
 export const searchControllers = {
-  searchTickers: () => {
-    fetch('/.netlify/functions/searchTickers', {
+  searchTickers: (input: string) => {
+    return fetch('/.netlify/functions/searchTickers', {
       method: "POST",
-      body: JSON.stringify("Microsoft")
+      body: JSON.stringify(input)
     })
-      .then(res => res.json())
-      .then(res => console.log(res));
   }
 }
