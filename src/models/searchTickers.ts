@@ -28,10 +28,8 @@ exports.handler = async (event: HandlerEvent, context: HandlerContext) => {
     return { statusCode: 405, body: "ERROR: Method Not Allowed"}
   }
 
-  console.log('searchTickers function called');
-
   //retrieve search input from post body
-  const input = event.body;
+  const input = JSON.parse(event.body || '');
   const searchTickersEndpoint = `https://api.polygon.io/v3/reference/tickers?search=${input}&active=true&sort=ticker&order=asc&limit=1000&apiKey=${process.env.POLYGON_API_KEY}`
 
   //fetch request to Polygon API for tickers

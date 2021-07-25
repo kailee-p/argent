@@ -19,7 +19,8 @@ const SearchBar = ({
   useEffect(() => {
     searchControllers.searchTickers(searchQuery)
       .then((res) => res.json())
-      .then((res) => setSearchResults(res.nameAndTickerArr));
+      .then((res) => setSearchResults(res.nameAndTickerArr))
+      .catch((err) => console.log('searchControllers.searchTickers ERROR: ', err));
   }, [searchQuery, setSearchResults])
 
   //opens company/stock info page upon ticker selection

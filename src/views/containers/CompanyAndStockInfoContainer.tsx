@@ -1,17 +1,21 @@
-import { Container, Grid } from '@material-ui/core';
+import { useParams } from 'react-router-dom';
+import CompanyInfoContainer from './CompanyInfoContainer';
+import StockInfoContainer from './StockInfoContainer';
+import { companyInfoControllers } from '../../controllers/companyInfoController';
 
 const CompanyAndStockInfoContainer = () => {
-  console.log('company info container rendered');
+  let { ticker } = useParams<{ ticker: string}>();
+
+  companyInfoControllers.getCompanyInfo(ticker)
+    .then((res) => res.json())
+    .then((res) => console.log(res));
 
   return (
-    <Container>
-      <Grid container spacing={6}>
-        Company Info
-      </Grid>
-      <Grid container spacing={6}>
-        Stock Info
-      </Grid>
-    </Container>
+    <div>
+      {ticker}
+      <CompanyInfoContainer />
+      <StockInfoContainer />
+    </div>
   )
 }
 
