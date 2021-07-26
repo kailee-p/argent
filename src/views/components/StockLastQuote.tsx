@@ -8,8 +8,6 @@ type StockLastQuoteProps = {
 }
 
 const StockLastQuote = ({ lastQuote }: StockLastQuoteProps) => {
-  console.log('lastQuote', lastQuote);
-
   if (lastQuote !== null) {
     //destructure stock quote info from prop
     const { askPrice, bidPrice, spread} = lastQuote

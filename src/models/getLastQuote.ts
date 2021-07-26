@@ -2,6 +2,7 @@ import { HandlerEvent } from '@netlify/functions'
 import fetch from "node-fetch";
 
 exports.handler = async (event: HandlerEvent) => {
+  console.log('getlastQuote called');
   //post request only
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'ERROR in getLastQuote Netlify function: Method Not Allowed'}
