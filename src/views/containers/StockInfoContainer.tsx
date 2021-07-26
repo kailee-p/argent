@@ -5,21 +5,15 @@ import StockLastQuote from '../components/StockLastQuote';
 
 type StockInfoContainerProps = {
   selectedTicker: string
+  lastQuote: {
+    askPrice: string,
+    bidPrice: string,
+    spread: string
+  } | null
+  setLastQuote: React.Dispatch<React.SetStateAction<null>>
 }
 
-const StockInfoContainer = ({ selectedTicker }: StockInfoContainerProps) => {
-    //state to hold last quote returned from API; begins as null
-    const [lastQuote, setLastQuote] = useState(null);
-
-    //search for stock info upon ticker change, if ticker is not empty string
-    useEffect(() => {
-      if (selectedTicker !== '') {
-        stockInfoControllers.getLastQuote(selectedTicker)
-        .then((res) => res.json())
-        .then((res) => setLastQuote(res))
-        .catch((err) => console.log('stockInfoControllers.getStockInfo ERROR: ', err));
-      }
-    }, [selectedTicker])
+const StockInfoContainer = ({ selectedTicker, lastQuote }: StockInfoContainerProps) => {
   
     return (
       <div>

@@ -1,11 +1,13 @@
 // import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Tabs, Tab } from '@material-ui/core';
 
 import SearchBar from '../components/SearchBar';
 import CompanyInfoContainer from './CompanyInfoContainer';
 import StockInfoContainer from './StockInfoContainer';
+
+import { stockInfoControllers } from "../../controllers/stockInfoControllers";
 
 const CompanyAndStockInfoContainer = () => {
   //state to hold search query
@@ -18,10 +20,24 @@ const CompanyAndStockInfoContainer = () => {
   //state for tab navigation
   const [tab, setTab] = useState(0);
 
-  //handle tab navigation
+  //handler for tab navigation
   const handleTabs = (idx: number) => {
     setTab(idx);
   }
+
+  //STOCK-RELATED STATE
+  //state to hold last quote returned from API; begins as null
+  const [lastQuote, setLastQuote] = useState(null);
+
+  //search for stock info upon ticker change, if ticker is not empty string
+  useEffect(() => {
+    if (selectedTicker !== '') {
+      stockInfoControllers.getLastQuote(selectedTicker)
+      .then((res) => res.json())
+      .then((res) => setLastQuote(res))
+      .catch((err) => console.log('stockInfoControllers.getStockInfo ERROR: ', err));
+    }
+  }, [selectedTicker, setLastQuote])
 
   //array of tabs for company and stock info
   const infoTabs = [
@@ -30,6 +46,8 @@ const CompanyAndStockInfoContainer = () => {
     />,
     <StockInfoContainer
       selectedTicker={selectedTicker} 
+      lastQuote={lastQuote}
+      setLastQuote={setLastQuote}
     />
   ]
 
