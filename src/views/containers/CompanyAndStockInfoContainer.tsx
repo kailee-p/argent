@@ -26,8 +26,11 @@ const CompanyAndStockInfoContainer = () => {
   //array of tabs for company and stock info
   const infoTabs = [
     <CompanyInfoContainer
-    selectedTicker={selectedTicker} />,
-    <StockInfoContainer />
+      selectedTicker={selectedTicker} 
+    />,
+    <StockInfoContainer
+      selectedTicker={selectedTicker} 
+    />
   ]
 
   if (selectedTicker !== '') {
