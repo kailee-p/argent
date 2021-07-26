@@ -33,6 +33,19 @@ const AllInfoContainer = () => {
     }
   }, [selectedTicker, setLastQuote])
 
+  //state to hold previous day information returned from API; begins as null
+  const [prevDayInfo, setPrevDayInfo] = useState(null);
+
+  //search for stock info previous day information upon ticker change, if ticker is not empty string
+  useEffect(() => {
+    if (selectedTicker !== '') {
+      stockInfoControllers.getPrevDayInfo(selectedTicker)
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      // .catch((err) => console.log('stockInfoControllers.getPrevDayInfo ERROR: ', err));
+    }
+  }, [selectedTicker, setLastQuote])
+
   //COMPANY-RELATED STATE & SIDE EFFECTS
   //state to hold company info returned from API; begins as null
   const [companyInfo, setCompanyInfo] = useState(null);
@@ -47,6 +60,7 @@ const AllInfoContainer = () => {
     }
   }, [selectedTicker, setCompanyInfo])
 
+  //UI-RELATED STATE
   //state for tab navigation
   const [tab, setTab] = useState(0);
 
@@ -62,7 +76,6 @@ const AllInfoContainer = () => {
     lastQuote={lastQuote}
     />,
     <CompanyInfo
-      selectedTicker={selectedTicker} 
       companyInfo={companyInfo}
     />
   ]

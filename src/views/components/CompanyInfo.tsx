@@ -3,14 +3,13 @@ import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton, Divi
 import LaunchIcon from '@material-ui/icons/Launch';
 
 type CompanyInfoProps = {
-  selectedTicker: string,
   companyInfo: {
     info?: companyInfoForDisplay,
     error?: string
   } | null
 }
 
-const CompanyInfo = ({ selectedTicker, companyInfo }: CompanyInfoProps) => {
+const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
   if (companyInfo !== null && companyInfo.hasOwnProperty('info')) {
     //destructure details from companyInfo prop
     const {
@@ -56,6 +55,7 @@ const CompanyInfo = ({ selectedTicker, companyInfo }: CompanyInfoProps) => {
               secondary={industry}
             />
           </ListItem>
+          <Divider variant="middle" />
           <ListItem>
             <ListItemText
               primary="Employees"
