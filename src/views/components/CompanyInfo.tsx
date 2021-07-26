@@ -3,13 +3,14 @@ import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton, Divi
 import LaunchIcon from '@material-ui/icons/Launch';
 
 type CompanyInfoProps = {
+  selectedTicker: string,
   companyInfo: {
     info?: companyInfoForDisplay,
     error?: string
   } | null
 }
 
-const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
+const CompanyInfo = ({ selectedTicker, companyInfo }: CompanyInfoProps) => {
   if (companyInfo !== null && companyInfo.hasOwnProperty('info')) {
     //destructure details from companyInfo prop
     const {

@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import { stockInfoControllers } from "../../controllers/stockInfoControllers";
-
 import StockLastQuote from '../components/StockLastQuote';
 
 type StockInfoContainerProps = {
@@ -10,7 +7,6 @@ type StockInfoContainerProps = {
     bidPrice: string,
     spread: string
   } | null
-  setLastQuote: React.Dispatch<React.SetStateAction<null>>
 }
 
 const StockInfoContainer = ({ selectedTicker, lastQuote }: StockInfoContainerProps) => {
