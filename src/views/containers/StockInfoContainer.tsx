@@ -28,6 +28,16 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
   return (
     <div>
       <h2>{selectedTicker}</h2>
+      <Grid component="label" container alignItems="center" spacing={2}>
+        <Grid item>Previous</Grid>
+        <Grid item>
+          <Switch 
+            checked={stocksSwitchToday} 
+            onChange={handleChange}
+          />
+        </Grid>
+        <Grid item>Current</Grid>
+      </Grid>
       { stocksSwitchToday === true && 
         <>
           <StockLastQuote 
@@ -48,16 +58,6 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
           />
         </>
       )}
-      <Grid component="label" container alignItems="center" spacing={2}>
-        <Grid item>Previous Day</Grid>
-        <Grid item>
-          <Switch 
-            checked={stocksSwitchToday} 
-            onChange={handleChange}
-          />
-        </Grid>
-        <Grid item>Current</Grid>
-      </Grid>
     </div>
   )
 }

@@ -3,26 +3,21 @@ import { useState, useEffect } from 'react';
 
 import { Tabs, Tab } from '@material-ui/core';
 
-import SearchBar from '../components/multi/SearchBar';
 import CompanyInfo from '../components/company/CompanyInfo';
 import StockInfoContainer from './StockInfoContainer';
+import SearchBarContainer from './SearchBarContainer';
 
 import { stockInfoControllers } from "../../controllers/stockInfoControllers";
 import { companyInfoControllers } from '../../controllers/companyInfoController';
 
 const AllInfoContainer = () => {
-  //SEARCH-RELATED STATE
-  //state to hold search query
-  const [searchQuery, setSearchQuery] = useState('');
-  //state to hold array of search results returned from API call
-  const [searchResults, setSearchResults] = useState([]);
+  //SEARCH-RELATED STATE 
   //state to hold selected ticker
   const [selectedTicker, setSelectedTicker] = useState('');
 
   //STOCK-RELATED STATE & SIDE EFFECTS
   //state to hold last quote returned from API; begins as null
   const [lastQuote, setLastQuote] = useState(null);
-
   //search for stock info upon ticker change, if ticker is not empty string
   useEffect(() => {
     if (selectedTicker !== '') {
@@ -72,9 +67,9 @@ const AllInfoContainer = () => {
   //array of tabs for company and stock info
   const infoTabs = [
     <StockInfoContainer
-    selectedTicker={selectedTicker} 
-    lastQuote={lastQuote}
-    prevDayInfo={prevDayInfo}
+      selectedTicker={selectedTicker} 
+      lastQuote={lastQuote}
+      prevDayInfo={prevDayInfo}
     />,
     <CompanyInfo
       companyInfo={companyInfo}
@@ -84,11 +79,7 @@ const AllInfoContainer = () => {
   if (selectedTicker !== '') {
     return (
       <div>
-        <SearchBar 
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          searchResults={searchResults}
-          setSearchResults={setSearchResults}
+        <SearchBarContainer
           selectedTicker={selectedTicker}
           setSelectedTicker={setSelectedTicker}
         />
@@ -110,11 +101,7 @@ const AllInfoContainer = () => {
   } else {
     return (
       <div>
-        <SearchBar 
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          searchResults={searchResults}
-          setSearchResults={setSearchResults}
+        <SearchBarContainer
           selectedTicker={selectedTicker}
           setSelectedTicker={setSelectedTicker}
         />
