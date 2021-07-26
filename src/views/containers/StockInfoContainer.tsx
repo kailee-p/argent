@@ -4,6 +4,7 @@ import StockLastQuote from '../components/StockLastQuote';
 import StockPrevClose from '../components/StockPrevClose';
 import { lastQuoteInterface, prevDayInfoInterface } from '../../interfaces/stockInfoInterfaces';
 import StockLastQuoteDataViz from '../components/StockLastQuoteDataViz';
+import StockPrevCloseDataViz from '../components/StockPrevCloseDataViz';
 
 type StockInfoContainerProps = {
   selectedTicker: string,
@@ -38,9 +39,14 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
         </>
       }
       { stocksSwitchToday !== true && (
-        <StockPrevClose
-          prevDayInfo={prevDayInfo}
-        />
+        <>
+          <StockPrevClose
+            prevDayInfo={prevDayInfo}
+          />
+          <StockPrevCloseDataViz
+            prevDayInfo={prevDayInfo}
+          />
+        </>
       )}
       <Grid component="label" container alignItems="center" spacing={2}>
         <Grid item>Previous Day</Grid>
