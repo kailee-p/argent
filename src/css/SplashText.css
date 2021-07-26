@@ -1,9 +1,9 @@
-h2 {
+#splash-text {
   padding-left: clamp(5vw, 10vw, 20vw);
   text-align: right;
   font-size: clamp(1em, 3em, 4em);
 }
 
-h2 > span {
+#splash-text > span {
   background: #A7BBCA;
 }

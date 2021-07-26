@@ -4,7 +4,7 @@ import { Grid } from '@material-ui/core';
 import Header from '../components/multi/Header';
 import SplashText from '../components/splash/SplashText';
 import SplashImage from '../components/splash/SplashImage';
-import CustomButton from '../components/splash/CustomButton';
+import CustomButton from '../components/multi/CustomButton';
 import Footer from '../components/splash/Footer';
 
 import '../../css/SplashContainer.css';
