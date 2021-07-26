@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import StockLastQuote from '../components/StockLastQuote';
 import StockPrevClose from '../components/StockPrevClose';
 import { lastQuoteInterface, prevDayInfoInterface } from '../../interfaces/stockInfoInterfaces';
+import StockLastQuoteDataViz from '../components/StockLastQuoteDataViz';
 
 type StockInfoContainerProps = {
   selectedTicker: string,
@@ -27,9 +28,14 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
     <div>
       <h2>{selectedTicker}</h2>
       { stocksSwitchToday === true && 
-        <StockLastQuote 
-          lastQuote={lastQuote}
-        /> 
+        <>
+          <StockLastQuote 
+            lastQuote={lastQuote}
+          /> 
+          <StockLastQuoteDataViz
+            lastQuote={lastQuote}
+          />
+        </>
       }
       { stocksSwitchToday !== true && (
         <StockPrevClose

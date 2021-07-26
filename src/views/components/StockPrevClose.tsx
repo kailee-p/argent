@@ -15,28 +15,28 @@ const StockPrevClose = ({ prevDayInfo }: StockPrevCloseProps) => {
             <ListItem>
               <ListItemText
                 primary="Open Price"
-                secondary={openPrice}
+                secondary={`$${openPrice.toFixed(2)}`}
               />
             </ListItem>
             <Divider variant="middle" />
             <ListItem>
               <ListItemText
                 primary="Close Price"
-                secondary={closePrice}
+                secondary={`$${closePrice.toFixed(2)}`}
               />
             </ListItem>
             <Divider variant="middle" />
             <ListItem>
               <ListItemText
                 primary="Highest Price"
-                secondary={highestPrice}
+                secondary={`$${highestPrice.toFixed(2)}`}
               />
             </ListItem>
             <Divider variant="middle" />
             <ListItem>
               <ListItemText
                 primary="Lowest Price"
-                secondary={lowestPrice}
+                secondary={`$${lowestPrice.toFixed(2)}`}
               />
             </ListItem>
             <Divider variant="middle" />

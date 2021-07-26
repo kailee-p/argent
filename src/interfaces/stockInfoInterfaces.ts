@@ -1,12 +1,12 @@
 export interface lastQuoteInterface {
-  askPrice: string,
-  bidPrice: string,
-  spread: string
+  askPrice: number,
+  bidPrice: number,
+  spread: number
 }
 
 export interface prevDayInfoInterface {
-  closePrice: string,
-  highestPrice: string,
-  lowestPrice: string,
-  openPrice: string
+  closePrice: number,
+  highestPrice: number,
+  lowestPrice: number,
+  openPrice: number
 }
