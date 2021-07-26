@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 type CustomButtonPropTypes = {
   className?: string,
   buttonText: string,
