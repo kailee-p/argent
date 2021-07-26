@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 
 import { Tabs, Tab } from '@material-ui/core';
 
+import SearchBarContainer from './SearchBarContainer';
+import Header from '../components/multi/Header';
 import CompanyInfo from '../components/company/CompanyInfo';
 import StockInfoContainer from './StockInfoContainer';
-import SearchBarContainer from './SearchBarContainer';
 
 import { stockInfoControllers } from "../../controllers/stockInfoControllers";
 import { companyInfoControllers } from '../../controllers/companyInfoController';
@@ -79,6 +80,7 @@ const AllInfoContainer = () => {
   if (selectedTicker !== '') {
     return (
       <div>
+        <Header />
         <SearchBarContainer
           selectedTicker={selectedTicker}
           setSelectedTicker={setSelectedTicker}
@@ -101,6 +103,7 @@ const AllInfoContainer = () => {
   } else {
     return (
       <div>
+        <Header />
         <SearchBarContainer
           selectedTicker={selectedTicker}
           setSelectedTicker={setSelectedTicker}

@@ -1,9 +1,12 @@
+import Logo from './Logo';
+import '../../../css/Header.css';
+
 const Header = () => {
   return (
     <header>
-      A R G E N T
+      <Logo />
     </header>
-  )
+  ) 
 }
 
 export default Header;

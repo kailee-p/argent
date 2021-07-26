@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
-import Header from '../components/splash/Header';
+import Header from '../components/multi/Header';
 import SplashText from '../components/splash/SplashText';
 import SplashImage from '../components/splash/SplashImage';
 import CustomButton from '../components/splash/CustomButton';
