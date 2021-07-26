@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 import { Tabs, Tab } from '@material-ui/core';
 
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../components/multi/SearchBar';
 import CompanyInfo from '../components/company/CompanyInfo';
 import StockInfoContainer from './StockInfoContainer';
 

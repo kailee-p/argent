@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Autocomplete from 'react-autocomplete';
-import { searchControllers } from '../../controllers/searchControllers';
+import { searchControllers } from '../../../controllers/searchControllers';
 
 type SearchBarProps = {
   searchQuery: string,
