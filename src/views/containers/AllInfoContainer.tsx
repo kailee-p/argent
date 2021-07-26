@@ -41,8 +41,8 @@ const AllInfoContainer = () => {
     if (selectedTicker !== '') {
       stockInfoControllers.getPrevDayInfo(selectedTicker)
       .then((res) => res.json())
-      .then((res) => console.log(res))
-      // .catch((err) => console.log('stockInfoControllers.getPrevDayInfo ERROR: ', err));
+      .then((res) => setPrevDayInfo(res))
+      .catch((err) => console.log('stockInfoControllers.getPrevDayInfo ERROR: ', err));
     }
   }, [selectedTicker, setLastQuote])
 
@@ -74,6 +74,7 @@ const AllInfoContainer = () => {
     <StockInfoContainer
     selectedTicker={selectedTicker} 
     lastQuote={lastQuote}
+    prevDayInfo={prevDayInfo}
     />,
     <CompanyInfo
       companyInfo={companyInfo}

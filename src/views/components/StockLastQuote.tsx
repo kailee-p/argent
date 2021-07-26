@@ -1,10 +1,8 @@
 import { List, ListItem, ListItemText, Divider } from '@material-ui/core';
+import { lastQuoteInterface } from '../../interfaces/stockInfoInterfaces';
+
 type StockLastQuoteProps = {
-  lastQuote: {
-    askPrice: string,
-    bidPrice: string,
-    spread: string
-  } | null
+  lastQuote: lastQuoteInterface | null
 }
 
 const StockLastQuote = ({ lastQuote }: StockLastQuoteProps) => {
@@ -14,8 +12,7 @@ const StockLastQuote = ({ lastQuote }: StockLastQuoteProps) => {
 
     return (
       <section>
-        <h3>Last Stock Quote</h3>
-        <p>15 minute delayed data provided by Polygon.io</p>
+        <h3>Current Stock Quote</h3>
         <List>
           <ListItem>
             <ListItemText

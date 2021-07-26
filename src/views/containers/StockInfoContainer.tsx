@@ -1,18 +1,16 @@
 import { Switch, Grid } from '@material-ui/core';
 import React, { useState } from 'react';
 import StockLastQuote from '../components/StockLastQuote';
-import StocksPrevClose from '../components/StocksPrevClose';
+import StockPrevClose from '../components/StockPrevClose';
+import { lastQuoteInterface, prevDayInfoInterface } from '../../interfaces/stockInfoInterfaces';
 
 type StockInfoContainerProps = {
-  selectedTicker: string
-  lastQuote: {
-    askPrice: string,
-    bidPrice: string,
-    spread: string
-  } | null
+  selectedTicker: string,
+  lastQuote: lastQuoteInterface | null,
+  prevDayInfo: prevDayInfoInterface | null
 }
 
-const StockInfoContainer = ({ selectedTicker, lastQuote }: StockInfoContainerProps) => {
+const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInfoContainerProps) => {
   //state for switch that changes stocks view
   const [stocksSwitchToday, setStocksSwitchToday] = useState(true)
   
@@ -34,17 +32,19 @@ const StockInfoContainer = ({ selectedTicker, lastQuote }: StockInfoContainerPro
         /> 
       }
       { stocksSwitchToday !== true && (
-        <StocksPrevClose />
+        <StockPrevClose
+          prevDayInfo={prevDayInfo}
+        />
       )}
       <Grid component="label" container alignItems="center" spacing={2}>
-        <Grid item>Yesterday</Grid>
+        <Grid item>Previous Day</Grid>
         <Grid item>
           <Switch 
             checked={stocksSwitchToday} 
             onChange={handleChange}
           />
         </Grid>
-        <Grid item>Today</Grid>
+        <Grid item>Current</Grid>
       </Grid>
     </div>
   )

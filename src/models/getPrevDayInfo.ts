@@ -15,16 +15,17 @@ exports.handler = async (event: HandlerEvent) => {
   try {
     const response = await fetch(getPrevDayInfoEndpoint);
     const prevDayInfo = await response.json();
-    console.log('prevDayInfo', prevDayInfo);
-
-    // return {
-    //   statusCode: 200,
-    //   body: JSON.stringify({ //convert numbers to USD currency strings
-    //     askPrice: `$${lastQuote.results.P.toFixed(2)}`,
-    //     bidPrice: `$${lastQuote.results.p.toFixed(2)}`,
-    //     spread: `$${(lastQuote.results.P - lastQuote.results.p).toFixed(2)}` //calculate spread from bid-ask difference to 2 decimals
-    //   })
-    // }
+    //destructure previous day info from API response
+    const { c, h, l, o } = prevDayInfo.results[0];
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ //convert numbers to USD currency strings
+        closePrice: `$${c.toFixed(2)}`,
+        openPrice: `$${o.toFixed(2)}`,
+        highestPrice: `$${h.toFixed(2)}`,
+        lowestPrice: `$${l.toFixed(2)}`,
+      })
+    }
   } catch (err: unknown) {
     console.log('ERROR in getPrevDayInfo Netlify function: ', err);
     return {
