@@ -1,3 +1,5 @@
+import '../../../css/SplashText.css';
+
 const SplashText = () => {
   return (
     <h2>

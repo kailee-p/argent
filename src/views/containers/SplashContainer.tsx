@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router-dom';
+import { Grid } from '@material-ui/core';
 
 import Header from '../components/multi/Header';
 import SplashText from '../components/splash/SplashText';
@@ -17,12 +18,22 @@ const SplashContainer = () => {
   return (
     <div>
       <Header />
-      <SplashText />
-      <SplashImage />
-      <CustomButton 
-        buttonText="Discover your next investment"
-        onClick={handleClick}
-      />
+      <Grid 
+        justifyContent="center"
+        container 
+        spacing={5}
+      >
+        <Grid item xs={6}>
+          <SplashText />
+          <CustomButton 
+            buttonText="Discover your next investment"
+            onClick={handleClick}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <SplashImage />
+        </Grid>
+      </Grid>
       <Footer />
     </div>
   )
