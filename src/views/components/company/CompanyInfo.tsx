@@ -1,4 +1,4 @@
-import { companyInfoForDisplay } from '../../interfaces/companyInfoInterfaces';
+import { companyInfoForDisplay } from '../../../interfaces/companyInfoInterfaces';
 import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton, Divider, Tooltip } from '@material-ui/core';
 import LaunchIcon from '@material-ui/icons/Launch';
 

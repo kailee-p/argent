@@ -1,10 +1,10 @@
 import { useHistory } from 'react-router-dom';
 
-import Header from '../components/Header';
-import SplashText from '../components/SplashText';
-import SplashImage from '../components/SplashImage';
-import CustomButton from '../components/CustomButton';
-import Footer from '../components/Footer';
+import Header from '../components/splash/Header';
+import SplashText from '../components/splash/SplashText';
+import SplashImage from '../components/splash/SplashImage';
+import CustomButton from '../components/splash/CustomButton';
+import Footer from '../components/splash/Footer';
 
 const SplashContainer = () => {
   //redirect to company search page on click

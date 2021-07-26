@@ -16,14 +16,15 @@ exports.handler = async (event: HandlerEvent) => {
     const response = await fetch(getPrevDayInfoEndpoint);
     const prevDayInfo = await response.json();
     //destructure previous day info from API response
-    const { c, h, l, o } = prevDayInfo.results[0];
+    const { c, h, l, o }: { c: number, h: number, l: number, o: number } = prevDayInfo.results[0];
+
     return {
       statusCode: 200,
       body: JSON.stringify({ //convert numbers to USD currency strings
-        closePrice: `$${c.toFixed(2)}`,
-        openPrice: `$${o.toFixed(2)}`,
-        highestPrice: `$${h.toFixed(2)}`,
-        lowestPrice: `$${l.toFixed(2)}`,
+        closePrice: c,
+        openPrice: o,
+        highestPrice: h,
+        lowestPrice: l
       })
     }
   } catch (err: unknown) {

@@ -19,9 +19,9 @@ exports.handler = async (event: HandlerEvent) => {
     return {
       statusCode: 200,
       body: JSON.stringify({ //convert numbers to USD currency strings
-        askPrice: `$${lastQuote.results.P.toFixed(2)}`,
-        bidPrice: `$${lastQuote.results.p.toFixed(2)}`,
-        spread: `$${(lastQuote.results.P - lastQuote.results.p).toFixed(2)}` //calculate spread from bid-ask difference to 2 decimals
+        askPrice: lastQuote.results.P,
+        bidPrice: lastQuote.results.p,
+        spread: lastQuote.results.P - lastQuote.results.p //calculate spread from bid-ask difference to 2 decimals
       })
     }
   } catch (err: unknown) {

@@ -1,8 +1,10 @@
 import { Switch, Grid } from '@material-ui/core';
 import React, { useState } from 'react';
-import StockLastQuote from '../components/StockLastQuote';
-import StockPrevClose from '../components/StockPrevClose';
+import StockLastQuote from '../components/stock/StockLastQuote';
+import StockPrevClose from '../components/stock/StockPrevClose';
 import { lastQuoteInterface, prevDayInfoInterface } from '../../interfaces/stockInfoInterfaces';
+import StockLastQuoteDataViz from '../components/stock/StockLastQuoteDataViz';
+import StockPrevCloseDataViz from '../components/stock/StockPrevCloseDataViz';
 
 type StockInfoContainerProps = {
   selectedTicker: string,
@@ -27,14 +29,24 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
     <div>
       <h2>{selectedTicker}</h2>
       { stocksSwitchToday === true && 
-        <StockLastQuote 
-          lastQuote={lastQuote}
-        /> 
+        <>
+          <StockLastQuote 
+            lastQuote={lastQuote}
+          /> 
+          <StockLastQuoteDataViz
+            lastQuote={lastQuote}
+          />
+        </>
       }
       { stocksSwitchToday !== true && (
-        <StockPrevClose
-          prevDayInfo={prevDayInfo}
-        />
+        <>
+          <StockPrevClose
+            prevDayInfo={prevDayInfo}
+          />
+          <StockPrevCloseDataViz
+            prevDayInfo={prevDayInfo}
+          />
+        </>
       )}
       <Grid component="label" container alignItems="center" spacing={2}>
         <Grid item>Previous Day</Grid>
