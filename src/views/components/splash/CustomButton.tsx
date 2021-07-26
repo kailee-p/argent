@@ -1,5 +1,7 @@
+// import '../../../css/CustomButton.css';
+
 type CustomButtonPropTypes = {
-  className?: string
+  className?: string,
   buttonText: string,
   onClick: React.MouseEventHandler<HTMLButtonElement>
   color?: string,
@@ -9,6 +11,9 @@ type CustomButtonPropTypes = {
   borderColor?: string,
   height?: string,
   width?: string
+  margin?: string,
+  padding?: string
+  fontSize?: string
 }
 
 const CustomButton = ({
@@ -21,7 +26,10 @@ const CustomButton = ({
   borderRadius,
   borderColor,
   height,
-  width
+  width,
+  margin,
+  padding,
+  fontSize
 }: CustomButtonPropTypes) => {
   return (
     <button 
@@ -34,7 +42,10 @@ const CustomButton = ({
         borderRadius,
         borderColor,
         height,
-        width
+        width,
+        margin,
+        padding,
+        fontSize
       }}
     >
         { buttonText }
