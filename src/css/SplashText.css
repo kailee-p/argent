@@ -4,3 +4,7 @@ h2 {
   font-size: clamp(1em, 3em, 4em);
 }
 
+h2 > span {
+  background: #bbc3c9;
+}
+

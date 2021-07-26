@@ -25,7 +25,7 @@ const SplashContainer = () => {
       >
         <Grid item xs={6}>
           <SplashText />
-          <CustomButton 
+          <CustomButton
             buttonText="Discover your next investment"
             onClick={handleClick}
           />
