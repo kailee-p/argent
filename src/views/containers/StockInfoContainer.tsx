@@ -1,10 +1,10 @@
 import { Switch, Grid } from '@material-ui/core';
 import React, { useState } from 'react';
-import StockLastQuote from '../components/StockLastQuote';
-import StockPrevClose from '../components/StockPrevClose';
+import StockLastQuote from '../components/stock/StockLastQuote';
+import StockPrevClose from '../components/stock/StockPrevClose';
 import { lastQuoteInterface, prevDayInfoInterface } from '../../interfaces/stockInfoInterfaces';
-import StockLastQuoteDataViz from '../components/StockLastQuoteDataViz';
-import StockPrevCloseDataViz from '../components/StockPrevCloseDataViz';
+import StockLastQuoteDataViz from '../components/stock/StockLastQuoteDataViz';
+import StockPrevCloseDataViz from '../components/stock/StockPrevCloseDataViz';
 
 type StockInfoContainerProps = {
   selectedTicker: string,

@@ -1,5 +1,5 @@
 import { List, ListItem, ListItemText, Divider } from '@material-ui/core';
-import { prevDayInfoInterface } from '../../interfaces/stockInfoInterfaces';
+import { prevDayInfoInterface } from '../../../interfaces/stockInfoInterfaces';
 
 type StockPrevCloseProps = {
   prevDayInfo: prevDayInfoInterface | null

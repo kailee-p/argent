@@ -1,5 +1,5 @@
 import { List, ListItem, ListItemText, Divider } from '@material-ui/core';
-import { lastQuoteInterface } from '../../interfaces/stockInfoInterfaces';
+import { lastQuoteInterface } from '../../../interfaces/stockInfoInterfaces';
 
 type StockLastQuoteProps = {
   lastQuote: lastQuoteInterface | null
