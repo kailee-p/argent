@@ -1,9 +1,9 @@
-// import '../../../css/CustomButton.css';
+import { useState } from 'react';
 
 type CustomButtonPropTypes = {
   className?: string,
   buttonText: string,
-  onClick: React.MouseEventHandler<HTMLButtonElement>
+  onClick: React.MouseEventHandler<HTMLButtonElement>,
   color?: string,
   backgroundColor?: string,
   border?: string,

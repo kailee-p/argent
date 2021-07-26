@@ -10,9 +10,8 @@ import Footer from '../components/splash/Footer';
 import '../../css/SplashContainer.css';
 
 const SplashContainer = () => {
-  //redirect to company search page on click
+  //redirect to company search on click
   let history = useHistory();
-
   const handleClick = () => {
     history.push('/company-search');
   }
