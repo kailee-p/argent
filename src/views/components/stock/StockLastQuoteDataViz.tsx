@@ -46,12 +46,15 @@ const StockLastQuoteDataViz = ({ lastQuote }: StockLastQuoteDataVizProps) => {
     };
 
     return (
-      <>
+      <div 
+        role="img" 
+        aria-label="a bar chart visualizing the ask price, bid price, and spread from the most recent quote for selected stock ticker"
+      >
         <Bar 
           className={styles.stockGraph} 
           data={data} 
           options={options} />
-      </>  
+      </div>  
     )
   } else {
     return <div></div>

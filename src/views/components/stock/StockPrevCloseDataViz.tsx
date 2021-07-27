@@ -48,12 +48,15 @@ const StockPrevCloseDataViz = ({ prevDayInfo }: StockPrevCloseDataVizProps) => {
     };
 
     return (
-      <>
+      <div
+        role="img" 
+        aria-label="a bar chart visualizing the previous day's open, high, low, and close price for selected stock ticker"
+      >
         <Bar 
           className={styles.stockGraph}
           data={data}
           options={options} />
-      </>  
+      </div>  
     )
   } else {
     return <div></div>

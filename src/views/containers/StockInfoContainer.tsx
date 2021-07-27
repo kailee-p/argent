@@ -60,6 +60,7 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
           <CustomSwitch 
             checked={stocksSwitchToday} 
             onChange={handleChange}
+            aria-label="Switch between today's stock info and yesterday's stock info"
           />
         </Grid>
         <Grid item>Current</Grid>
