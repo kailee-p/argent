@@ -93,7 +93,6 @@ const AllInfoContainer = () => {
           TabIndicatorProps={{
             style: {
               background: "#0C666E",
-              fontFamily: ["Karla", "sans-serif"].join(',')
             }
           }}
         >
@@ -110,7 +109,7 @@ const AllInfoContainer = () => {
           >
           </Tab>
         </Tabs>
-        <section>
+        <section className={styles.infoTab}>
           {infoTabs[tab]}
         </section>
       </div>
