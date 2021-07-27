@@ -5,10 +5,6 @@
   font-size: .8em;
 }
 
-.footer > span {
-  margin: 0 .2em;
-}
-
 .footer a {
   text-decoration: none;
   background-color: #A7BBCA;
@@ -22,11 +18,4 @@
 .footer a:visited {
   text-decoration: none;
   color: black;
-}
-
-@media only screen and (max-width: 600px) {
-  .footer > span { 
-    font-size: clamp(.25em, 1em, 1.25em);
-    margin: 0;
-  }
 }
