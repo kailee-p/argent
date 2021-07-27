@@ -5,3 +5,12 @@
 .splashButtonContainer {
   text-align: right;
 }
+
+@media only screen and (max-width: 600px) {
+  .splashImageContainer {
+    display: none;
+  }
+  .splashButtonContainer {
+    text-align: center;
+  }
+}

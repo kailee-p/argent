@@ -8,3 +8,10 @@
 .splashText > span {
   background: #A7BBCA;
 }
+
+@media only screen and (max-width: 600px) {
+  .splashText {
+    text-align: center;
+    font-size: 1em;
+  }  
+}

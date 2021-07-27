@@ -42,7 +42,7 @@ const SplashContainer = () => {
             />
           </div>
         </Grid>
-        <Grid item xs={6}>
+        <Grid className={styles.splashImageContainer} item xs={6}>
           <SplashImage />
         </Grid>
       </Grid>

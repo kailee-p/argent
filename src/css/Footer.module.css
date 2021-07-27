@@ -12,6 +12,7 @@
 .footer a {
   text-decoration: none;
   background-color: #A7BBCA;
+  color: black;
 }
 
 .footer a:hover {
