@@ -36,10 +36,13 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
       description
     } = companyInfo.info!
 
+    //conditionally render company info if found
     return (
       <section className={styles.companyInfoContainer}> 
         <h2 className={styles.companyInfoTitle}>{name} ({symbol})</h2>
         <List>
+        { ceo && (
+        <div>
           <ListItem>
             <ListItemText
               primary="CEO"
@@ -47,58 +50,84 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
             />
           </ListItem>
           <Divider variant="middle" />
-          <ListItem>
-            <ListItemText
-              primary="Address"
-              secondary={hq_address}
-            />
-          </ListItem>
-          <Divider variant="middle" />
-          <ListItem>
-            <ListItemText
-              primary="Phone"
-              secondary={phone}
-            />
-          </ListItem>
-          <Divider variant="middle" />
-          <ListItem>
-            <ListItemText
-              primary="Industry"
-              secondary={industry}
-            />
-          </ListItem>
-          <Divider variant="middle" />
-          <ListItem>
-            <ListItemText
-              primary="Employees"
-              secondary={employees}
-            />
-          </ListItem>
-          <Divider variant="middle" />
-          <ListItem>
-            <ListItemText
-              primary="Description"
-              secondary={description}
-            />
-          </ListItem>
-          <Divider variant="middle" />
-          <ListItem>
-            <ListItemText
-              primary="Website"
-              secondary={url}
-            />
-            <ListItemSecondaryAction>
-              <Tooltip 
-                classes={{tooltip: classes.tooltip}}
-                title="Go to Company Website" >
-                <IconButton edge="end" aria-label="Go to Company Website">
-                  <a href={url}>
-                    <LaunchIcon />
-                  </a>
-                </IconButton>
-              </Tooltip>
-            </ListItemSecondaryAction>          
-          </ListItem>
+        </div>
+        )}
+        { hq_address &&  (
+          <div>
+            <ListItem>
+              <ListItemText
+                primary="Address"
+                secondary={hq_address}
+              />
+            </ListItem>
+            <Divider variant="middle" />
+          </div>
+        )}
+        { phone && (
+          <div>
+            <ListItem>
+              <ListItemText
+                primary="Phone"
+                secondary={phone}
+              />
+            </ListItem>
+            <Divider variant="middle" />
+          </div>
+        )}
+        { industry && (
+          <div>
+            <ListItem>
+              <ListItemText
+                primary="Industry"
+                secondary={industry}
+              />
+            </ListItem>
+            <Divider variant="middle" />
+          </div>
+        )}
+        { parseInt(employees) > 0 && ( //don't render if no employees
+          <div>
+            <ListItem>
+              <ListItemText
+                primary="Employees"
+                secondary={employees}
+              />
+            </ListItem>
+            <Divider variant="middle" />
+          </div>
+        )}
+        { description && (
+          <div>
+            <ListItem>
+              <ListItemText
+                primary="Description"
+                secondary={description}
+              />
+            </ListItem>
+            <Divider variant="middle" />
+          </div>
+        )}
+        { url && (
+          <div>
+            <ListItem>
+              <ListItemText
+                primary="Website"
+                secondary={url}
+              />
+              <ListItemSecondaryAction>
+                <Tooltip 
+                  classes={{tooltip: classes.tooltip}}
+                  title="Go to Company Website" >
+                  <IconButton edge="end" aria-label="Go to Company Website">
+                    <a href={url}>
+                      <LaunchIcon />
+                    </a>
+                  </IconButton>
+                </Tooltip>
+              </ListItemSecondaryAction>          
+            </ListItem>
+          </div>
+        )}
         </List>
       </section>
     )
@@ -106,7 +135,7 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
     if (companyInfo.error === 'Not Found') { //render different message depending on error
       return (
         <section className={styles.noCompanyInfoContainer}>
-          No company associated with that ticker name. 
+          No company associated with that ticker symbol. 
           See stock tab for more details on this ticker's stock.
         </section>
       )
