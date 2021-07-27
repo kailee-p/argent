@@ -67,14 +67,14 @@ const AllInfoContainer = () => {
 
   //array of tabs for company and stock info
   const infoTabs = [
-    <StockInfoContainer
-      selectedTicker={selectedTicker} 
-      lastQuote={lastQuote}
-      prevDayInfo={prevDayInfo}
-    />,
     <CompanyInfo
       companyInfo={companyInfo}
-    />
+    />,
+    <StockInfoContainer
+    selectedTicker={selectedTicker} 
+    lastQuote={lastQuote}
+    prevDayInfo={prevDayInfo}
+    />,
   ]
 
   if (selectedTicker !== '') {
@@ -90,9 +90,9 @@ const AllInfoContainer = () => {
           onChange={(_, idx) => handleTabs(idx)}
           centered
         >
-          <Tab value={0} label="Stock">
+          <Tab value={0} label="Company">
           </Tab>
-          <Tab value={1} label="Company">
+          <Tab value={1} label="Stock">
           </Tab>
         </Tabs>
         <section>
