@@ -1,5 +1,11 @@
 .splashImage {
-  height: 42em;
+  max-height: 42em;
   border-radius: 25px;
   margin-left: 2rem;
+}
+
+@media screen and  (max-width: 600px) {
+  .splashImage {
+    display: none;
+  }
 }
