@@ -23,3 +23,10 @@
   text-decoration: none;
   color: black;
 }
+
+@media only screen and (max-width: 600px) {
+  .footer > span { 
+    font-size: clamp(.25em, 1em, 1.25em);
+    margin: 0;
+  }
+}
