@@ -2,7 +2,7 @@ import { useState } from 'react';
 import SearchBar from '../components/multi/SearchBar';
 
 type SearchBarContainerProps = {
-  selectedTicker: string,
+  selectedTicker: string | null
   setSelectedTicker: React.Dispatch<React.SetStateAction<string>>
 }
 
