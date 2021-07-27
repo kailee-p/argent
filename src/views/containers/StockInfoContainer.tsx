@@ -45,9 +45,8 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
         <Grid item>Current</Grid>
       </Grid>
       { stocksSwitchToday === true && 
-        <Grid container>
-          <Grid item xs={6}
-          >
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
             <StockLastQuote 
               lastQuote={lastQuote}
             /> 
@@ -60,14 +59,18 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
         </Grid>
       }
       { stocksSwitchToday !== true && (
-        <>
-          <StockPrevClose
-            prevDayInfo={prevDayInfo}
-          />
+        <Grid container spacing={2}>
+          <Grid item xs={6}>
+            <StockPrevClose
+              prevDayInfo={prevDayInfo}
+            />
+          </Grid>
+          <Grid item xs={6}>
           <StockPrevCloseDataViz
             prevDayInfo={prevDayInfo}
           />
-        </>
+          </Grid>
+        </Grid>
       )}
     </div>
   )

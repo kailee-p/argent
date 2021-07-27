@@ -71,9 +71,9 @@ const AllInfoContainer = () => {
       companyInfo={companyInfo}
     />,
     <StockInfoContainer
-    selectedTicker={selectedTicker} 
-    lastQuote={lastQuote}
-    prevDayInfo={prevDayInfo}
+      selectedTicker={selectedTicker} 
+      lastQuote={lastQuote}
+      prevDayInfo={prevDayInfo}
     />,
   ]
 
