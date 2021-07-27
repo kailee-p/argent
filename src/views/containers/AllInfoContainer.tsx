@@ -100,12 +100,14 @@ const AllInfoContainer = () => {
             value={0} 
             label="Company" 
             aria-label="Open company info tab"
+            disableTouchRipple
           >
           </Tab>
           <Tab 
             value={1} 
             label="Stock" 
             aria-label="Open stock info tab"
+            disableTouchRipple
           >
           </Tab>
         </Tabs>
