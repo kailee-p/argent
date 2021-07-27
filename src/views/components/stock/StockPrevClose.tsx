@@ -1,5 +1,6 @@
 import { List, ListItem, ListItemText, Divider } from '@material-ui/core';
 import { prevDayInfoInterface } from '../../../interfaces/stockInfoInterfaces';
+import styles from '../../../css/InfoDisplay.module.css';
 
 type StockPrevCloseProps = {
   prevDayInfo: prevDayInfoInterface | null
@@ -9,7 +10,7 @@ const StockPrevClose = ({ prevDayInfo }: StockPrevCloseProps) => {
   if (prevDayInfo !== null) {
     const { openPrice, highestPrice, lowestPrice, closePrice } = prevDayInfo;
     return (
-      <section>
+      <section className={styles.stockInfoContainer}>
         <h3>Previous Day Open/High/Low/Close (OHLC)</h3>
         <List>
             <ListItem>

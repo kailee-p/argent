@@ -1,6 +1,9 @@
 import { companyInfoForDisplay } from '../../../interfaces/companyInfoInterfaces';
 import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton, Divider, Tooltip } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import LaunchIcon from '@material-ui/icons/Launch';
+
+import styles from '../../../css/InfoDisplay.module.css';
 
 type CompanyInfoProps = {
   companyInfo: {
@@ -9,7 +12,16 @@ type CompanyInfoProps = {
   } | null
 }
 
+const useStyles = makeStyles({
+  tooltip: {
+    fontSize: '12px',
+  },
+});
+
 const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
+  //styles for tooltip
+  const classes = useStyles();
+
   if (companyInfo !== null && companyInfo.hasOwnProperty('info')) {
     //destructure details from companyInfo prop
     const {
@@ -25,8 +37,8 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
     } = companyInfo.info!
 
     return (
-      <section>
-        <h2>{name} ({symbol})</h2>
+      <section className={styles.companyInfoContainer}> 
+        <h2 className={styles.companyInfoTitle}>{name} ({symbol})</h2>
         <List>
           <ListItem>
             <ListItemText
@@ -76,7 +88,9 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
               secondary={url}
             />
             <ListItemSecondaryAction>
-              <Tooltip title="Go to Company Website">
+              <Tooltip 
+                classes={{tooltip: classes.tooltip}}
+                title="Go to Company Website" >
                 <IconButton edge="end" aria-label="Go to Company Website">
                   <a href={url}>
                     <LaunchIcon />
@@ -91,13 +105,14 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
   } else if (companyInfo !== null && companyInfo.hasOwnProperty('error')) {
     if (companyInfo.error === 'Not Found') { //render different message depending on error
       return (
-        <section>
-          No company associated with that ticker name.
+        <section className={styles.noCompanyInfoContainer}>
+          No company associated with that ticker name. 
+          See stock tab for more details on this ticker's stock.
         </section>
       )
     } else {
       return (
-        <section>
+        <section className={styles.noCompanyInfoContainer}>
           ERROR: {companyInfo.error}
         </section>
       )

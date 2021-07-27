@@ -1,24 +1,24 @@
-footer {
+.footer {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  font-size: 12px;
+  margin-top: 2em;
+  font-size: .8em;
 }
 
-footer > span {
-  margin: 0 2px;
+.footer > span {
+  margin: 0 .2em;
 }
 
-footer a {
+.footer a {
   text-decoration: none;
   background-color: #A7BBCA;
 }
 
-footer a:hover {
+.footer a:hover {
   text-decoration: underline;
 }
 
-footer a:visited {
+.footer a:visited {
   text-decoration: none;
   color: black;
 }

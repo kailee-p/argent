@@ -1,6 +1,5 @@
 // import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
 import { Tabs, Tab } from '@material-ui/core';
 
 import SearchBarContainer from './SearchBarContainer';
@@ -10,6 +9,8 @@ import StockInfoContainer from './StockInfoContainer';
 
 import { stockInfoControllers } from "../../controllers/stockInfoControllers";
 import { companyInfoControllers } from '../../controllers/companyInfoController';
+
+import styles from '../../css/AllInfoContainer.module.css';
 
 const AllInfoContainer = () => {
   //SEARCH-RELATED STATE 
@@ -67,14 +68,14 @@ const AllInfoContainer = () => {
 
   //array of tabs for company and stock info
   const infoTabs = [
+    <CompanyInfo
+      companyInfo={companyInfo}
+    />,
     <StockInfoContainer
       selectedTicker={selectedTicker} 
       lastQuote={lastQuote}
       prevDayInfo={prevDayInfo}
     />,
-    <CompanyInfo
-      companyInfo={companyInfo}
-    />
   ]
 
   if (selectedTicker !== '') {
@@ -90,9 +91,9 @@ const AllInfoContainer = () => {
           onChange={(_, idx) => handleTabs(idx)}
           centered
         >
-          <Tab value={0} label="Stock">
+          <Tab value={0} label="Company">
           </Tab>
-          <Tab value={1} label="Company">
+          <Tab value={1} label="Stock">
           </Tab>
         </Tabs>
         <section>
@@ -108,7 +109,9 @@ const AllInfoContainer = () => {
           selectedTicker={selectedTicker}
           setSelectedTicker={setSelectedTicker}
         />
-        Please search for a company name or ticker symbol above to get started.
+        <section className={styles.gettingStarted}>
+          Please search for a company name or ticker symbol above to get started.
+        </section>
       </div>
     )
   }

@@ -1,18 +1,21 @@
 import { useEffect } from 'react';
-import Autocomplete from 'react-autocomplete';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 import { searchControllers } from '../../../controllers/searchControllers';
+
+import styles from '../../../css/SearchBar.module.css';
 
 type SearchBarProps = {
   searchQuery: string,
   setSearchQuery:  React.Dispatch<React.SetStateAction<string>>,
   searchResults: string[],
   setSearchResults: React.Dispatch<React.SetStateAction<never[]>>,
-  selectedTicker: string,
+  selectedTicker: string | null,
   setSelectedTicker: React.Dispatch<React.SetStateAction<string>>
 }
 
 const SearchBar = ({
-  searchQuery, setSearchQuery, searchResults, setSearchResults, setSelectedTicker
+  searchQuery, setSearchQuery, searchResults, setSearchResults, selectedTicker, setSelectedTicker
 }: SearchBarProps) => {
   //searches for tickers to populate dropdown upon search query change
   useEffect(() => {
@@ -23,20 +26,21 @@ const SearchBar = ({
   }, [searchQuery, setSearchResults])
 
   return (
-    <div>
+    <div className={styles.searchBar}>
       <Autocomplete
-        getItemValue={(item: string) => item}
-        items={searchResults}
-        renderItem={(item, isHighlighted) =>
-          <div 
-            key={searchResults.indexOf(item)}
-            style={{ background: isHighlighted ? '#E0E0E0' : 'white' }} >
-              {item}
-          </div>
-        }
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        onSelect={(value) => setSelectedTicker(value.split(':')[0])} //split ticker from string
+        className="search-bar"
+        freeSolo
+        options={searchResults}
+        renderInput={(params) => (
+          <TextField {...params} 
+            label="Search"
+            margin="normal" 
+            variant="outlined" />
+        )}
+        value={selectedTicker}
+        onChange={(_, newVal) => newVal !== null ? setSelectedTicker(newVal.split(':')[0]) : newVal }
+        inputValue={searchQuery}
+        onInputChange={(_, newInputVal) => setSearchQuery(newInputVal)}
       />
     </div>
   )

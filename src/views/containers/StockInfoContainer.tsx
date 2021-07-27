@@ -1,10 +1,14 @@
 import { Switch, Grid } from '@material-ui/core';
 import React, { useState } from 'react';
+
+import { lastQuoteInterface, prevDayInfoInterface } from '../../interfaces/stockInfoInterfaces';
+
 import StockLastQuote from '../components/stock/StockLastQuote';
 import StockPrevClose from '../components/stock/StockPrevClose';
-import { lastQuoteInterface, prevDayInfoInterface } from '../../interfaces/stockInfoInterfaces';
 import StockLastQuoteDataViz from '../components/stock/StockLastQuoteDataViz';
 import StockPrevCloseDataViz from '../components/stock/StockPrevCloseDataViz';
+
+import styles from '../../css/InfoDisplay.module.css';
 
 type StockInfoContainerProps = {
   selectedTicker: string,
@@ -26,9 +30,18 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
   }
 
   return (
-    <div>
-      <h2>{selectedTicker}</h2>
-      <Grid component="label" container alignItems="center" spacing={2}>
+    <Grid 
+      container 
+      justifyContent="center"
+    >
+      <h2 className={styles.stockTitle}>{selectedTicker}</h2>
+      <Grid 
+        className={styles.stockSwitch}
+        component="label" 
+        container 
+        justifyContent="center"
+        alignItems="center" 
+      >
         <Grid item>Previous</Grid>
         <Grid item>
           <Switch 
@@ -39,26 +52,34 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
         <Grid item>Current</Grid>
       </Grid>
       { stocksSwitchToday === true && 
-        <>
-          <StockLastQuote 
-            lastQuote={lastQuote}
-          /> 
-          <StockLastQuoteDataViz
-            lastQuote={lastQuote}
-          />
-        </>
+        <Grid container>
+          <Grid item xs={6}>
+            <StockLastQuote 
+              lastQuote={lastQuote}
+            /> 
+          </Grid>
+          <Grid item xs={6}>
+            <StockLastQuoteDataViz
+                lastQuote={lastQuote}
+              />
+          </Grid>
+        </Grid>
       }
       { stocksSwitchToday !== true && (
-        <>
-          <StockPrevClose
-            prevDayInfo={prevDayInfo}
-          />
+        <Grid container>
+          <Grid item xs={6}>
+            <StockPrevClose
+              prevDayInfo={prevDayInfo}
+            />
+          </Grid>
+          <Grid item xs={6}>
           <StockPrevCloseDataViz
             prevDayInfo={prevDayInfo}
           />
-        </>
+          </Grid>
+        </Grid>
       )}
-    </div>
+    </Grid>
   )
 }
 

@@ -1,0 +1,32 @@
+/* Company Info Styles */
+.companyInfoContainer {
+  text-align: center;
+}
+
+.companyInfoTitle {
+  padding: 1.25rem;
+}
+
+.noCompanyInfoContainer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+/* Stock Info Styles */
+.stockTitle {
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
+}
+
+.stockSwitch {
+  padding-bottom: 1rem;
+}
+
+.stockInfoContainer {
+  text-align: center;
+}
+
+.stockGraph {
+  padding-right: 1rem;
+}

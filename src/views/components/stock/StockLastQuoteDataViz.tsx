@@ -1,5 +1,6 @@
 import { Bar } from 'react-chartjs-2';
 import { lastQuoteInterface } from '../../../interfaces/stockInfoInterfaces';
+import styles from '../../../css/InfoDisplay.module.css';
 
 type StockLastQuoteDataVizProps = {
   lastQuote: lastQuoteInterface | null
@@ -46,7 +47,10 @@ const StockLastQuoteDataViz = ({ lastQuote }: StockLastQuoteDataVizProps) => {
 
     return (
       <>
-        <Bar data={data} options={options} />
+        <Bar 
+          className={styles.stockGraph} 
+          data={data} 
+          options={options} />
       </>  
     )
   } else {

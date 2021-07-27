@@ -1,4 +1,4 @@
-#argent-logo {
+.argentLogo {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 10vw, 5rem);
 }

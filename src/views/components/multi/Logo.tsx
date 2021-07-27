@@ -1,8 +1,8 @@
-import '../../../css/Logo.css';
+import styles from '../../../css/Logo.module.css';
 
 const Logo = () => {
   return (
-    <div id="argent-logo">
+    <div className={styles.argentLogo}>
       arg / ent
     </div>
   )
