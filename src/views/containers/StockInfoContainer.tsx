@@ -1,10 +1,14 @@
 import { Switch, Grid } from '@material-ui/core';
 import React, { useState } from 'react';
+
+import { lastQuoteInterface, prevDayInfoInterface } from '../../interfaces/stockInfoInterfaces';
+
 import StockLastQuote from '../components/stock/StockLastQuote';
 import StockPrevClose from '../components/stock/StockPrevClose';
-import { lastQuoteInterface, prevDayInfoInterface } from '../../interfaces/stockInfoInterfaces';
 import StockLastQuoteDataViz from '../components/stock/StockLastQuoteDataViz';
 import StockPrevCloseDataViz from '../components/stock/StockPrevCloseDataViz';
+
+import styles from '../../css/StockDisplay.module.css';
 
 type StockInfoContainerProps = {
   selectedTicker: string,
@@ -26,14 +30,14 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
   }
 
   return (
-    <div>
-      <h2>{selectedTicker}</h2>
+    <Grid container justifyContent="center">
+      <h2 className={styles.stockTitle}>{selectedTicker}</h2>
       <Grid 
+        className={styles.stockSwitch}
         component="label" 
         container 
         justifyContent="center"
         alignItems="center" 
-        spacing={1}
       >
         <Grid item>Previous</Grid>
         <Grid item>
@@ -45,7 +49,7 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
         <Grid item>Current</Grid>
       </Grid>
       { stocksSwitchToday === true && 
-        <Grid container spacing={2}>
+        <Grid container>
           <Grid item xs={6}>
             <StockLastQuote 
               lastQuote={lastQuote}
@@ -72,7 +76,7 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
           </Grid>
         </Grid>
       )}
-    </div>
+    </Grid>
   )
 }
 

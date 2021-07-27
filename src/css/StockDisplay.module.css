@@ -1,0 +1,16 @@
+.stockTitle {
+  padding-top: 20px;
+  padding-bottom: 12px;
+}
+
+.stockSwitch {
+  padding-bottom: 15px;
+}
+
+.stockInfoContainer {
+  text-align: center;
+}
+
+.stockGraph {
+  padding-top: 5vh;
+}
