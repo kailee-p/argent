@@ -93,7 +93,6 @@ const AllInfoContainer = () => {
           TabIndicatorProps={{
             style: {
               background: "#0C666E",
-              fontFamily: ["Karla", "sans-serif"].join(',')
             }
           }}
         >
@@ -101,16 +100,18 @@ const AllInfoContainer = () => {
             value={0} 
             label="Company" 
             aria-label="Open company info tab"
+            disableTouchRipple
           >
           </Tab>
           <Tab 
             value={1} 
             label="Stock" 
             aria-label="Open stock info tab"
+            disableTouchRipple
           >
           </Tab>
         </Tabs>
-        <section>
+        <section className={styles.infoTab}>
           {infoTabs[tab]}
         </section>
       </div>
