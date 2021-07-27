@@ -1,5 +1,13 @@
+.splashContainer {
+  width: 100%;
+}
+
 .splashButtonContainer {
   text-align: right;
+}
+
+.splashTextAndButtonContainer {
+  padding-right: 3vw;
 }
 
 @media only screen and (max-width: 600px) {

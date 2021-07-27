@@ -17,12 +17,12 @@ const SplashContainer = () => {
   }
 
   return (
-    <div>
+    <div className={styles.splashContainer}>
       <Header />
       <Grid 
         justifyContent="center"
         container
-        spacing={7}
+        spacing={0}
       >
         <Grid item xs={6} className={styles.splashTextAndButtonContainer}>
           <SplashText />
