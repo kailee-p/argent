@@ -2,3 +2,13 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 10vw, 5rem);
 }
+
+.argentLogo a {
+  color: black;
+  text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+  transition: text-decoration-color 200ms;
+}
+
+.argentLogo a:hover {
+  text-decoration-color: rgba(0, 0, 0, 1);
+}

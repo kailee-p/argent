@@ -4,6 +4,6 @@
   font-size: clamp(1em, 3em, 4em);
 }
 
-#splashText > span {
+.splashText > span {
   background: #A7BBCA;
 }

@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 import styles from '../../../css/Logo.module.css';
 
 const Logo = () => {
   return (
     <div className={styles.argentLogo}>
-      arg / ent
+      <Link to="/" aria-label="Go to home page">arg / ent</Link>
     </div>
   )
 }
