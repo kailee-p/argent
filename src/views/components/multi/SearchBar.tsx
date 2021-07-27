@@ -30,7 +30,10 @@ const SearchBar = ({
         freeSolo
         options={searchResults}
         renderInput={(params) => (
-          <TextField {...params} label="freeSolo" margin="normal" variant="outlined" />
+          <TextField {...params} 
+            label="Search"
+            margin="normal" 
+            variant="outlined" />
         )}
         value={selectedTicker}
         onChange={(_, newVal) => newVal !== null ? setSelectedTicker(newVal.split(':')[0]) : newVal }
