@@ -30,7 +30,10 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
   }
 
   return (
-    <Grid container justifyContent="center">
+    <Grid 
+      container 
+      justifyContent="center"
+    >
       <h2 className={styles.stockTitle}>{selectedTicker}</h2>
       <Grid 
         className={styles.stockSwitch}

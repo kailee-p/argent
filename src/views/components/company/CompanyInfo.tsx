@@ -105,8 +105,9 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
   } else if (companyInfo !== null && companyInfo.hasOwnProperty('error')) {
     if (companyInfo.error === 'Not Found') { //render different message depending on error
       return (
-        <section>
-          No company associated with that ticker name.
+        <section className={styles.noCompanyInfoContainer}>
+          No company associated with that ticker name. 
+          See stock tab for more details on this ticker's stock.
         </section>
       )
     } else {

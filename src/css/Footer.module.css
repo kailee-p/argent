@@ -1,12 +1,12 @@
 .footer {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  font-size: 12px;
+  margin-top: 2em;
+  font-size: .8em;
 }
 
 .footer > span {
-  margin: 0 2px;
+  margin: 0 .2em;
 }
 
 .footer a {

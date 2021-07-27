@@ -108,7 +108,9 @@ const AllInfoContainer = () => {
           selectedTicker={selectedTicker}
           setSelectedTicker={setSelectedTicker}
         />
-        Please search for a company name or ticker symbol above to get started.
+        <section>
+          Please search for a company name or ticker symbol above to get started.
+        </section>
       </div>
     )
   }

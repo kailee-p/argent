@@ -7,6 +7,12 @@
   padding: 20px;
 }
 
+.noCompanyInfoContainer {
+  text-align: center;
+  padding: 20px;
+  font-size: 2rem;
+}
+
 /* Stock Info Styles */
 .stockTitle {
   padding-top: 20px;
