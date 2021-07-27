@@ -90,10 +90,24 @@ const AllInfoContainer = () => {
           value={tab}
           onChange={(_, idx) => handleTabs(idx)}
           centered
+          TabIndicatorProps={{
+            style: {
+              background: "#0C666E",
+              fontFamily: ["Karla", "sans-serif"].join(',')
+            }
+          }}
         >
-          <Tab value={0} label="Company">
+          <Tab 
+            value={0} 
+            label="Company" 
+            aria-label="Open company info tab"
+          >
           </Tab>
-          <Tab value={1} label="Stock">
+          <Tab 
+            value={1} 
+            label="Stock" 
+            aria-label="Open stock info tab"
+          >
           </Tab>
         </Tabs>
         <section>
