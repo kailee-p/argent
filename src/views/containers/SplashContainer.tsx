@@ -20,22 +20,21 @@ const SplashContainer = () => {
     <div>
       <Header />
       <Grid 
-        className={styles.splashContainer}
         justifyContent="center"
         container
         spacing={7}
       >
-        <Grid item xs={6}>
+        <Grid item xs={6} className={styles.splashTextAndButtonContainer}>
           <SplashText />
           <div className={styles.splashButtonContainer}>
             <CustomButton
               className="splash-button"
               buttonText="Discover your next investment"
               onClick={handleClick}
-              height="4rem"
-              width="24rem"
-              margin="1rem 0 0 0"
-              padding="0"
+              height="10vh"
+              width="25vw"
+              margin="2rem 0 0 0"
+              padding=".2rem"
             />
           </div>
         </Grid>
