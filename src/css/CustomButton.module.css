@@ -13,7 +13,7 @@
   text-decoration: underline;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
   .customButton {
     font-size: .75em;
   }
