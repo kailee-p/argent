@@ -90,6 +90,12 @@ const AllInfoContainer = () => {
           value={tab}
           onChange={(_, idx) => handleTabs(idx)}
           centered
+          TabIndicatorProps={{
+            style: {
+              background: "#0C666E",
+              fontFamily: ["Karla", "sans-serif"].join(',')
+            }
+          }}
         >
           <Tab 
             value={0} 

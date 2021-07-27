@@ -1,4 +1,5 @@
 import { Switch, Grid } from '@material-ui/core';
+import { styled } from '@material-ui/core';
 import React, { useState } from 'react';
 
 import { lastQuoteInterface, prevDayInfoInterface } from '../../interfaces/stockInfoInterfaces';
@@ -10,6 +11,19 @@ import StockPrevCloseDataViz from '../components/stock/StockPrevCloseDataViz';
 
 import styles from '../../css/InfoDisplay.module.css';
 
+//styling for switch
+const CustomSwitch = styled(Switch)(() => ({
+  '& .MuiSwitch-switchBase.Mui-checked': {
+    color: "#0C666E",
+    '&:hover': {
+      backgroundColor: "rgba(12, 102, 110, .25)"
+    },
+  },
+  '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+    backgroundColor: "#0C666E",
+  }
+}));
+
 type StockInfoContainerProps = {
   selectedTicker: string,
   lastQuote: lastQuoteInterface | null,
@@ -20,7 +34,7 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
   //state for switch that changes stocks view
   const [stocksSwitchToday, setStocksSwitchToday] = useState(true)
   
-  //handler for switch
+  // handler for switch
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (stocksSwitchToday === true) {
       setStocksSwitchToday(false);
@@ -37,14 +51,13 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
       <h2 className={styles.stockTitle}>{selectedTicker}</h2>
       <Grid 
         className={styles.stockSwitch}
-        component="label" 
         container 
         justifyContent="center"
         alignItems="center" 
       >
         <Grid item>Previous</Grid>
         <Grid item>
-          <Switch 
+          <CustomSwitch 
             checked={stocksSwitchToday} 
             onChange={handleChange}
           />
