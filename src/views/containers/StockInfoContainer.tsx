@@ -34,7 +34,7 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
   //state for switch that changes stocks view
   const [stocksSwitchToday, setStocksSwitchToday] = useState(true)
   
-  // handler for switch
+  //handler for switch
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (stocksSwitchToday === true) {
       setStocksSwitchToday(false);
