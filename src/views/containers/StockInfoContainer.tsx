@@ -66,7 +66,7 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
         </Grid>
       }
       { stocksSwitchToday !== true && (
-        <Grid container spacing={2}>
+        <Grid container>
           <Grid item xs={6}>
             <StockPrevClose
               prevDayInfo={prevDayInfo}

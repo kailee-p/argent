@@ -1,6 +1,5 @@
 // import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
 import { Tabs, Tab } from '@material-ui/core';
 
 import SearchBarContainer from './SearchBarContainer';
@@ -10,6 +9,8 @@ import StockInfoContainer from './StockInfoContainer';
 
 import { stockInfoControllers } from "../../controllers/stockInfoControllers";
 import { companyInfoControllers } from '../../controllers/companyInfoController';
+
+import styles from '../../css/AllInfoContainer.module.css';
 
 const AllInfoContainer = () => {
   //SEARCH-RELATED STATE 
@@ -108,7 +109,7 @@ const AllInfoContainer = () => {
           selectedTicker={selectedTicker}
           setSelectedTicker={setSelectedTicker}
         />
-        <section>
+        <section className={styles.gettingStarted}>
           Please search for a company name or ticker symbol above to get started.
         </section>
       </div>

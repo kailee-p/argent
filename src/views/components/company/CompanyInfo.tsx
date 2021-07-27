@@ -112,7 +112,7 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
       )
     } else {
       return (
-        <section>
+        <section className={styles.noCompanyInfoContainer}>
           ERROR: {companyInfo.error}
         </section>
       )

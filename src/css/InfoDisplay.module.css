@@ -4,23 +4,23 @@
 }
 
 .companyInfoTitle {
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .noCompanyInfoContainer {
   text-align: center;
-  padding: 20px;
+  padding: 2rem;
   font-size: 2rem;
 }
 
 /* Stock Info Styles */
 .stockTitle {
-  padding-top: 20px;
-  padding-bottom: 12px;
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
 }
 
 .stockSwitch {
-  padding-bottom: 15px;
+  padding-bottom: 1rem;
 }
 
 .stockInfoContainer {
@@ -28,5 +28,5 @@
 }
 
 .stockGraph {
-  padding-top: 5vh;
+  padding-right: 1rem;
 }
