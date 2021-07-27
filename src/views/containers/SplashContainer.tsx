@@ -7,7 +7,7 @@ import SplashImage from '../components/splash/SplashImage';
 import CustomButton from '../components/multi/CustomButton';
 import Footer from '../components/splash/Footer';
 
-import '../../css/SplashContainer.css';
+import styles from '../../css/SplashContainer.module.css';
 
 const SplashContainer = () => {
   //redirect to company search on click
@@ -20,13 +20,14 @@ const SplashContainer = () => {
     <div>
       <Header />
       <Grid 
+        className={styles.splashContainer}
         justifyContent="center"
-        container 
-        spacing={5}
+        container
+        spacing={7}
       >
         <Grid item xs={6}>
           <SplashText />
-          <div id="splash-button-container">
+          <div className={styles.splashButtonContainer}>
             <CustomButton
               buttonText="Discover your next investment"
               onClick={handleClick}

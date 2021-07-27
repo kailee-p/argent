@@ -1,3 +1,13 @@
+/* Company Info Styles */
+.companyInfoContainer {
+  text-align: center;
+}
+
+.companyInfoTitle {
+  padding: 20px;
+}
+
+/* Stock Info Styles */
 .stockTitle {
   padding-top: 20px;
   padding-bottom: 12px;

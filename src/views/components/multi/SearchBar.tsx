@@ -3,6 +3,8 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { searchControllers } from '../../../controllers/searchControllers';
 
+import styles from '../../../css/SearchBar.module.css';
+
 type SearchBarProps = {
   searchQuery: string,
   setSearchQuery:  React.Dispatch<React.SetStateAction<string>>,
@@ -24,7 +26,7 @@ const SearchBar = ({
   }, [searchQuery, setSearchResults])
 
   return (
-    <div>
+    <div className={styles.searchBar}>
       <Autocomplete
         className="search-bar"
         freeSolo

@@ -1,8 +1,8 @@
-import '../../../css/Footer.css';
+import styles from '../../../css/Footer.module.css';
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <span>
         Argent by <a href="https://github.com/kailee-p">@kailee-p</a>
       </span>

@@ -8,7 +8,7 @@ import StockPrevClose from '../components/stock/StockPrevClose';
 import StockLastQuoteDataViz from '../components/stock/StockLastQuoteDataViz';
 import StockPrevCloseDataViz from '../components/stock/StockPrevCloseDataViz';
 
-import styles from '../../css/StockDisplay.module.css';
+import styles from '../../css/InfoDisplay.module.css';
 
 type StockInfoContainerProps = {
   selectedTicker: string,

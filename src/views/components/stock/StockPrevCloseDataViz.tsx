@@ -1,6 +1,6 @@
 import { Bar } from 'react-chartjs-2';
 import { prevDayInfoInterface } from '../../../interfaces/stockInfoInterfaces';
-import styles from '../../../css/StockDisplay.module.css';
+import styles from '../../../css/InfoDisplay.module.css';
 
 type StockPrevCloseDataVizProps = {
   prevDayInfo: prevDayInfoInterface | null

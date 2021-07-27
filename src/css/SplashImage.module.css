@@ -1,4 +1,5 @@
-#splash-image {
+.splashImage {
   height: 650px;
   border-radius: 25px;
+  margin-left: 3vw;
 }

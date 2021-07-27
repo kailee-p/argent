@@ -3,6 +3,8 @@ import { List, ListItem, ListItemText, ListItemSecondaryAction, IconButton, Divi
 import { makeStyles } from '@material-ui/core/styles';
 import LaunchIcon from '@material-ui/icons/Launch';
 
+import styles from '../../../css/InfoDisplay.module.css';
+
 type CompanyInfoProps = {
   companyInfo: {
     info?: companyInfoForDisplay,
@@ -35,8 +37,8 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
     } = companyInfo.info!
 
     return (
-      <section>
-        <h2>{name} ({symbol})</h2>
+      <section className={styles.companyInfoContainer}> 
+        <h2 className={styles.companyInfoTitle}>{name} ({symbol})</h2>
         <List>
           <ListItem>
             <ListItemText
