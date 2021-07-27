@@ -1,15 +1,16 @@
-.splashContainer {
-  max-width: 100vw;
-}
-
 .splashButtonContainer {
   text-align: right;
 }
 
 @media only screen and (max-width: 600px) {
+  .splashContainer {
+    text-align: center;
+  }
+
   .splashImageContainer {
     display: none;
   }
+
   .splashButtonContainer {
     text-align: center;
   }

@@ -1,0 +1,20 @@
+.customButton {
+  border: 2px solid #0C666E; 
+  border-radius: 5px;
+  background-color: #0C666E;
+  color: white;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 1.5em;
+}
+
+.customButton:hover {
+  background-color: transparent;
+  color: #0C666E;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 400px) {
+  .customButton {
+    font-size: .75em;
+  }
+}
