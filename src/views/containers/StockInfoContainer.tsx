@@ -47,6 +47,7 @@ const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInf
     <Grid 
       container 
       justifyContent="center"
+      className={styles.companyAndStockInfoContainer}
     >
       <h2 className={styles.stockTitle}>{selectedTicker}</h2>
       <Grid 

@@ -111,7 +111,7 @@ const AllInfoContainer = () => {
           >
           </Tab>
         </Tabs>
-        <section className={styles.infoTab}>
+        <section className={styles.infoTabs}>
           {infoTabs[tab]}
         </section>
       </div>
