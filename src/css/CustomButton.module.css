@@ -7,10 +7,12 @@
   font-size: 1.5em;
 }
 
-.customButton:hover {
-  background-color: transparent;
-  color: #0C666E;
-  text-decoration: underline;
+@media (hover: hover) {
+  .customButton:hover {
+    background-color: transparent;
+    color: #0C666E;
+    text-decoration: underline;
+  }
 }
 
 @media only screen and (max-width: 420px) {
