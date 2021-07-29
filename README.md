@@ -50,7 +50,7 @@ Argent has **7 of 3** required user interaction points, as detailed in the image
 Argent uses the MVC pattern. /models contains the Netlify serverless functions that directly interact with the Polygon API. /controllers contains the functionst hat handle responses and requests to the models from the frontend. /views contains the React components that render the frontend UI. 
 
 ### Integration with 3rd Party RESTful API
-Argent makes fetch calls to [Polygon](https://polygon.io/) for company and stock information. 
+Argent makes calls to [Polygon](https://polygon.io/) for company and stock information. 
 
 ### Minimum 5 material-ui/@core Components
 Argent utilizes **6 of 5** required MaterialUI components.
