@@ -59,11 +59,48 @@ Argent utilizes **6 of 5** required MaterialUI components.
 ### Example of Reusable UI Component
 Argent's splash page features a reusable button (./src/views/components/splash/CustomButton.tsx) that can be customized by passing className, buttonText, onClick, height, width, and padding strings as props in React. It also has its own CSS module that can be used to customize the hover effects and color scheme.
 
-![Argent splash page highlighting the customized button.](https://i.imgur.com/XwQcVet.png)
+![Argent splash page highlighting the customized button.](https://i.imgur.com/j1X6mrj.png)
 
 ## Architecture Overview
-MVC, architectural overview, and file structure go here
-document backend routes and at least 1 Polygon API route
+Argent was built on top of Create React App and retains some of CRA's starter folder structure. Additionally, Argent uses MVC architecture. See below for a more detailed discussion of Argent's folder structure. 
+
+```
+.
+├── public                              # contains the HTML file
+├── src                                 # contains all other project code
+│   ├── controllers                     # handles requests and responses between frontend and Netlify serverless functions
+│   │   ├── companyInfoController.ts   
+│   │   ├── searchController.ts         
+│   │   └── stockInfoController.ts      
+│   ├── css                             # contains all project CSS
+│   │ └── ...                             
+│   ├── images                          # contains splash image
+│   │ └── ... 
+│   ├── interfaces                      # contains any reused or bulky interfaces to be imported into components
+│   │ └── ... 
+│   ├── models                          # Netlify serverless functions that interact with Polygon API endpoints
+│   │   ├── getCompanyInfo.ts
+│   │   ├── getLastQuote.ts
+│   │   ├── getPrevDayInfo.ts
+│   │   └── searchTickers.ts      
+│   └── views                           # renders the UI
+│       ├── components                  # presentational components 
+│       │ ├── company                   # all components related to the company information view
+│       │ │ └── ...
+│       │ ├── multi                     # all components present on multiple views
+│       │ │ └── ...
+│       │ ├── splash                    # all components related to the splash page view
+│       │ │ └── ...
+│       │ └── stock                     # all components related to the stock information view
+│       │   └── ...
+│       └── containers                  # components that render children, generally stateful
+│         └── ...
+└── ...                                 # misc files (e.g., tsconfig.json, package.lock)
+```
+
+## API Documentation
+
+
 
 ## Design Process
 
