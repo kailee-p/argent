@@ -114,7 +114,7 @@ See below for documentation of the expected payload and response for one Polygon
 
 URL: https://api.polygon.io/
 
-### Ticker Details
+### Last Quote for a Symbol
 
 Retrieves the most recent prices for the ticker symbol.
 
