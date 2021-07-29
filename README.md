@@ -47,7 +47,7 @@ Argent has **7 of 3** required user interaction points, as detailed in the image
 ![Page from Argent showing the search bar and stock information components, including the tabs that toggle views and the switch that also toggles views.](https://i.imgur.com/oldJqe0.png)
 
 ### Specified Architectural Pattern
-Argent uses the MVC pattern. 
+Argent uses the MVC pattern. /models contains the Netlify serverless functions that directly interact with the Polygon API. /controllers contains the functionst hat handle responses and requests to the models from the frontend. /views contains the React components that render the frontend UI. 
 
 ### Integration with 3rd Party RESTful API
 Argent makes fetch calls to [Polygon](https://polygon.io/) for company and stock information. 
