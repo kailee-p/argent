@@ -3,11 +3,11 @@ import { prevDayInfoInterface } from '../../../interfaces/stockInfoInterfaces';
 import styles from '../../../css/InfoDisplay.module.css';
 
 type StockPrevCloseProps = {
-  prevDayInfo: prevDayInfoInterface | null
+  prevDayInfo: prevDayInfoInterface | undefined
 }
 
 const StockPrevClose = ({ prevDayInfo }: StockPrevCloseProps) => {
-  if (prevDayInfo !== null) {
+  if (prevDayInfo !== undefined) {
     const { openPrice, highestPrice, lowestPrice, closePrice } = prevDayInfo;
     return (
       <section className={styles.stockInfoContainer}>

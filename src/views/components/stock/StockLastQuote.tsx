@@ -3,11 +3,11 @@ import { lastQuoteInterface } from '../../../interfaces/stockInfoInterfaces';
 import styles from '../../../css/InfoDisplay.module.css';
 
 type StockLastQuoteProps = {
-  lastQuote: lastQuoteInterface | null
+  lastQuote: lastQuoteInterface | undefined
 }
 
 const StockLastQuote = ({ lastQuote }: StockLastQuoteProps) => {
-  if (lastQuote !== null) {
+  if (lastQuote !== undefined) {
     //destructure stock quote info from prop
     const { askPrice, bidPrice, spread } = lastQuote
 

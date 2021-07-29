@@ -26,8 +26,8 @@ const CustomSwitch = styled(Switch)(() => ({
 
 type StockInfoContainerProps = {
   selectedTicker: string,
-  lastQuote: lastQuoteInterface | null,
-  prevDayInfo: prevDayInfoInterface | null
+  lastQuote: lastQuoteInterface | undefined,
+  prevDayInfo: prevDayInfoInterface | undefined
 }
 
 const StockInfoContainer = ({ selectedTicker, lastQuote, prevDayInfo }: StockInfoContainerProps) => {

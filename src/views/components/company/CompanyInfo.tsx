@@ -9,7 +9,7 @@ type CompanyInfoProps = {
   companyInfo: {
     info?: companyInfoForDisplay,
     error?: string
-  } | null
+  } | undefined
 }
 
 const useStyles = makeStyles({
@@ -22,7 +22,7 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
   //styles for tooltip
   const classes = useStyles();
 
-  if (companyInfo !== null && companyInfo.hasOwnProperty('info')) {
+  if (companyInfo !== undefined && companyInfo.hasOwnProperty('info')) {
     //destructure details from companyInfo prop
     const {
       name,
@@ -131,7 +131,7 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
         </List>
       </section>
     )
-  } else if (companyInfo !== null && companyInfo.hasOwnProperty('error')) {
+  } else if (companyInfo !== undefined && companyInfo.hasOwnProperty('error')) {
     if (companyInfo.error === 'Not Found') { //render different message depending on error
       return (
         <section className={styles.noCompanyInfoContainer}>
@@ -146,7 +146,7 @@ const CompanyInfo = ({ companyInfo }: CompanyInfoProps) => {
         </section>
       )
     }
-  } else { //companyInfo is null
+  } else { //companyInfo is undefined
     return <div></div>
   }
 }
