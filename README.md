@@ -79,9 +79,9 @@ Argent was built on top of Create React App and retains some of CRA's starter fo
 ├── public                              # contains the HTML file
 ├── src                                 # contains all other project code
 │   ├── controllers                     # handles requests and responses between frontend and Netlify serverless functions
-│   │   ├── companyInfoController.ts   
-│   │   ├── searchController.ts         
-│   │   └── stockInfoController.ts      
+│   │   ├── companyInfoController.ts    # sends requests to getCompanyInfo
+│   │   ├── searchController.ts         # sends requests to searchTickers
+│   │   └── stockInfoController.ts      # sends requests to stock-related endpoints
 │   ├── css                             # contains all project CSS
 │   │ └── ...                             
 │   ├── images                          # contains splash image
@@ -89,22 +89,33 @@ Argent was built on top of Create React App and retains some of CRA's starter fo
 │   ├── interfaces                      # contains any reused or verbose interfaces for importing into components
 │   │ └── ... 
 │   ├── models                          # Netlify serverless functions that interact with Polygon API endpoints
-│   │   ├── getCompanyInfo.ts
-│   │   ├── getLastQuote.ts
-│   │   ├── getPrevDayInfo.ts
-│   │   └── searchTickers.ts      
+│   │   ├── getCompanyInfo.ts           # calls Polygon endpoint to get company information from ticker
+│   │   ├── getLastQuote.ts             # calls Polygon endpoint to get last quote of stock
+│   │   ├── getPrevDayInfo.ts           # calls Polygon endpoint to get previous day's stock prices
+│   │   └── searchTickers.ts            # calls Polygon endpoint to search tickers that match query     
 │   └── views                           # renders the UI
 │       ├── components                  # presentational components 
 │       │ ├── company                   # all components related to the company information view
-│       │ │ └── ...
+│       │ │ └── CompanyInfo.tsx         # displays company information
 │       │ ├── multi                     # all components present on multiple views
-│       │ │ └── ...
+│       │ │ ├── Header.tsx              # displays header        
+│       │ │ ├── Logo.tsx                # displays logo
+│       │ │ └── SearchBar.tsx           # displays search bar
 │       │ ├── splash                    # all components related to the splash page view
-│       │ │ └── ...
+│       │ │ ├── CustomButton.tsx        # displays custom button        
+│       │ │ ├── Footer.tsx              # displays footer
+│       │ │ ├── SplashImage.tsx         # displays splash image
+│       │ │ └── SplashText.tsx          # displays splash text
 │       │ └── stock                     # all components related to the stock information view
-│       │   └── ...
-│       └── containers                  # components that render children, generally stateful
-│         └── ...
+│       │   ├── StockLastQuote.tsx          # displays list of current stock prices        
+│       │   ├── StockLastQuoteDataViz.tsx   # displays data visualization of current stock prices
+│       │   ├── StockPrevClose.tsx          # displays list of previous stock prices
+│       │   └── Stock PrevCloseDataViz.tsx  # displays data visualization of previous stock prices
+│       └── containers                      # components that render children, generally stateful
+│         ├── AllInfoContainer.tsx      # parent container of Header, CompanyInfo, Stock InfoContainer, SearchBarContainer
+│         ├── SearchBarContainer.tsx    # parent container of SearchBar
+│         ├── SplashContainer.tsx       # parent container of Header, SplashText, SplashImage, CustomButton, and Footer
+│         └── StockInfoContainer.tsx    # parent container of StockLastQuote, StockPrevClose, StockLastQuoteDataViz, StockPrevCloseDataViz
 └── ...                                 # misc files (e.g., tsconfig.json, package.lock)
 ```
 
