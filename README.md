@@ -54,11 +54,12 @@ Argent utilizes **6 of 5** required MaterialUI components.
 
 ![Argent page showing the text field, divider, list, and tooltip](https://i.imgur.com/HIHsaGW.png)
 
-![Argent page showing the tabs and switch](https://i.imgur.com/HIHsaGW.png)
+![Argent page showing the tabs and switch](https://i.imgur.com/EP5MYK0.png)
 
 ### Example of Reusable UI Component
+Argent's splash page features a reusable button (./src/views/components/splash/CustomButton.tsx) that can be customized by passing className, buttonText, onClick, height, width, and padding strings as props in React. It also has its own CSS module that can be used to customize the hover effects and color scheme.
 
-
+![Argent splash page highlighting the customized button.](https://i.imgur.com/XwQcVet.png)
 
 ## Architecture Overview
 MVC, architectural overview, and file structure go here
