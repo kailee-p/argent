@@ -7,7 +7,7 @@ Argent is a full stack application with a React/TypeScript frontend and Netlify 
 ## Getting Started
 Argent can be viewed here: https://argent-2021.netlify.app/#/
 
-To run Argent locally, create an account with [Polygon.io](https://polygon.io/) and obtain an API key. 
+To run Argent locally, create an account with [Polygon](https://polygon.io/) and obtain an API key. 
 
 **NOTE:** This application was built with the **Stocks Starter tier API key**, which allows for **unlimited API calls**. This application is **untested** with the Stocks Basic tier and may have **limited or missing functionality** if you choose to use that tier.
 
@@ -98,14 +98,53 @@ Argent was built on top of Create React App and retains some of CRA's starter fo
 └── ...                                 # misc files (e.g., tsconfig.json, package.lock)
 ```
 
-## API Documentation
+## Polygon API Documentation
 
+See below for documentation of the expected payload and response for one Polygon API endpoint used by Argent. For more information regarding Polygon's API endpoints, see the [Polygon documentation](https://polygon.io/docs/getting-started).
 
+URL: https://api.polygon.io/
+
+### Ticker Details
+
+Retrieves the most recent prices for the ticker symbol.
+
+**Parameters**
+
+- tickerSymbol: ticker symbol of stock (required)
+- APIKey: API Key (required)
+
+**Example**
+
+```
+https://api.polygon.io/v2/last/nbbo/{tickerSymbol}?&apiKey={APIKey}
+```
+
+**JSON Response**
+
+```
+{
+ "request_id": request id assigned by server,
+ "results": {
+  "P": ask price (price a seller will sell at)
+  "S": ask size (number of round lot orders at given ask price)
+  "T": exchange symbol the stock is traded under
+  "X": Ask Exchange ID
+  "p": bid price (price a buyer will buy at)
+  "q": sequence number, represents sequence in which message events happened
+  "s": bid size (number of round lot orders at given bid price)
+  "t": nanosecond accuracy SIP Unix Timestamp
+  "x": Bid Exchange ID
+  "y": nanosecond accuracy Participant/Exchange Unix Timestamp
+  "z": defines which exchange the ticker is listed on (1 = NYSE, 2 = NYSE ARCA/NYSE American, 3 = NASDAQ)
+ },
+ "status": status of request's response
+}
+```
 
 ## Design Process
 
-## User Flow
+### User Flow
 
 Screenshots of each View and descriptions of the overall user flow as well as any place that you made distinct design decisions.  (Screenshots can be taken via any screenshot capture application or native methods).
 
-## Accessibility
+### Accessibility
