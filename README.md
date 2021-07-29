@@ -150,12 +150,47 @@ The initial wireframes for Argent, done in Google Jamboard, envisioned an applic
 
 ![Initial wireframe of company and stock information page.](https://i.imgur.com/gqENhOr.png)
 
-However, after reviewing scope, the final functionality of Argent was narrowed to showing only company information and stock information (current and previous day's prices), using switches and tabs to toggle between views. The two-column layout no longer displays company and stock information, but is utilized to show numerical stock prices and the corresponding bar graphs on the right hand side. 
+However, after reviewing scope, the final functionality of Argent was narrowed to showing only company information and stock information (current and previous day's prices), using switches and tabs to toggle between views. 
+
+The two-column layout no longer displays company and stock information, but is utilized to show numerical stock prices and the corresponding bar graphs on the right hand side. Instead of a button to return to the splash page, the Argent logo itself redirects the user and animates on mouseover. 
 
 ### User Flow
 
-Screenshots of each View and descriptions of the overall user flow as well as any place that you made distinct design decisions.  (Screenshots can be taken via any screenshot capture application or native methods).
+Argent's goal is to be a simple, easy-to-use and navigate application for looking up company and stock information, which requires a clean and accessible UI. Additional work was done to make Argent responsive to smaller screens, including mobile devices.
 
+#### Splash Page
+
+Argent's splash page anchors the application with its serif font in the logo contrasted with the clean sans-serif of the tagline text and the rest of the body. Colors from the splash image reappear throughout Argent's interface - to accent and tie together the color scheme.
+
+The large button contains a call to action for the user and inverts its color scheme (green font, white background) on hover. 
+
+![Argent's splash page displaying the two column layout with a header, footer, splash text, splash image, and button.](https://i.imgur.com/Kd0EH62.png)
+
+#### Initial Search 
+
+The next page gives the user clear instructions on how to proceed with the application's main functionality - searching for companies and stock tickers and viewing the relevant data. 
+
+![Argent's search page displaying a search bar and instructions on how to begin searching.](https://i.imgur.com/yEvanrD.png)
+
+#### Company Information
+
+Upon searching for a company name or ticker symbol, if one is found that is associated with the ticker symbol selected, a list of company details will be displayed. Argent leverages MaterialUI's List and Dividers to separate the company details into easily digested chunks. Additionally, the MaterialUI icon is used along with a tooltip to allow the user to visit an external company website. 
+
+Conditional rendering in React was used to only render whatever data the API returned - in some cases, some tickers contained no company information or were missing information in certain areas. 
+
+When the user is finished, they can use the tab to navigate between the company and stock information view. 
+
+![Argent's company information page displaying company name and list of different company details.](https://i.imgur.com/gfmWW16.png)
+
+#### Stock Information (Current & Previous Day)
+
+The stock information view defaults to the current day view, which displays a two-column layout with a list detailing the stock's ask price, bid price, and spread on the left side, and a bar chart visualizing this data on the right side. 
+
+![Argent's current day stock price information page showing two-column layout with bar chart.](https://i.imgur.com/UWASCiU.png)
+
+Using the switch, the user can toggle to view the previous day's OHLC for their selected ticker. Similarly, this view utilizes a list with a bar chart to visualize the data. 
+
+![Argent's previous day stock price information page showing two-column layout with bar chart.](https://i.imgur.com/J6dk3wX.png)
 
 ### Accessibility
 
