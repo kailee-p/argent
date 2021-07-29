@@ -10,6 +10,9 @@ import StockInfoContainer from './StockInfoContainer';
 import { stockInfoControllers } from "../../controllers/stockInfoControllers";
 import { companyInfoControllers } from '../../controllers/companyInfoController';
 
+import { lastQuoteInterface, prevDayInfoInterface } from '../../interfaces/stockInfoInterfaces';
+import { companyInfoForDisplay } from '../../interfaces/companyInfoInterfaces';
+
 import styles from '../../css/AllInfoContainer.module.css';
 
 const AllInfoContainer = () => {
@@ -19,7 +22,7 @@ const AllInfoContainer = () => {
 
   //STOCK-RELATED STATE & SIDE EFFECTS
   //state to hold last quote returned from API; begins as null
-  const [lastQuote, setLastQuote] = useState(null);
+  const [lastQuote, setLastQuote] = useState<lastQuoteInterface>();
   //search for stock info upon ticker change, if ticker is not empty string
   useEffect(() => {
     if (selectedTicker !== '') {
@@ -31,7 +34,7 @@ const AllInfoContainer = () => {
   }, [selectedTicker, setLastQuote])
 
   //state to hold previous day information returned from API; begins as null
-  const [prevDayInfo, setPrevDayInfo] = useState(null);
+  const [prevDayInfo, setPrevDayInfo] = useState<prevDayInfoInterface>();
 
   //search for stock info previous day information upon ticker change, if ticker is not empty string
   useEffect(() => {
@@ -45,7 +48,10 @@ const AllInfoContainer = () => {
 
   //COMPANY-RELATED STATE & SIDE EFFECTS
   //state to hold company info returned from API; begins as null
-  const [companyInfo, setCompanyInfo] = useState(null);
+  const [companyInfo, setCompanyInfo] = useState<{
+    info?: companyInfoForDisplay,
+    error?: string
+  }>();
 
   //search for company info upon ticker change, if ticker is not empty string
   useEffect(() => {
