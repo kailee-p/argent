@@ -166,7 +166,7 @@ The two-column layout no longer displays company and stock information, but is u
 
 ### User Flow
 
-Argent's goal is to be a simple, easy-to-use and navigate application for looking up company and stock information, which requires a clean and accessible UI. Additional work was done to make Argent responsive to smaller screens, including mobile devices.
+Argent's goal is to be a simple, easily usable and navigable application for looking up company and stock information, which requires a clean and accessible UI. Additional work was done to make Argent responsive to smaller screens, including mobile devices.
 
 #### Splash Page
 
@@ -204,5 +204,5 @@ Using the switch, the user can toggle to view the previous day's OHLC for their 
 
 ### Accessibility & Performance
 
-Argent's accessibility was improved through the usage of [Contrast Checker](https://webaim.org/resources/contrastchecker/) to confirm WCAG AA compliance for the color scheme text and UI components. Lighthouse was used to identify the need for lazy loading the splash image. Additional testing was done using the Voiceover application on Mac to improve labeling of UI components and images for screen readers. 
+Argent's accessibility was improved through the usage of [Contrast Checker](https://webaim.org/resources/contrastchecker/) to confirm WCAG AA compliance for the color schemes of text and UI components. Lighthouse was used to identify the need for lazy loading the splash image. Additional testing was done using the Voiceover application on Mac to improve labeling of UI components and images for screen readers. 
 
