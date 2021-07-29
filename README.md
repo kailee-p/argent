@@ -11,16 +11,23 @@ To run Argent locally, create an account with [Polygon](https://polygon.io/) and
 
 **NOTE:** This application was built with the **Stocks Starter tier API key**, which allows for **unlimited API calls**. This application is **untested** with the Stocks Basic tier and may have **limited or missing functionality** if you choose to use that tier.
 
+Fork and clone this repository to your local machine and open it. 
+
 Create a .env file in the root folder and add POLYGON_API_KEY=YOUR_API_KEY to the file.
 
 Install the required npm packages. 
 
-Install the Netlify CLI and run the Netlify dev command to spawn a local environment.
+```
+npm i
+```
+
+Install the Netlify CLI. You will need a Netlify account if you don't already have one. Authenticate and obtain an access token via the command line. Connect to your forked GitHub repository with the Netlify CLI (you'll be prompted to log in to your GitHub account). Finally, run the Netlify dev command to spawn a local environment.
 
 ```
-npm i 
-npm install netlify-cli-g
-netlify dev
+npm install netlify-cli-g         # install the netlify CLI
+netlify login                     # obtain a token
+netlify init                      # connect to your repo 
+netlify dev                       # spawn a local environment
 ```
 
 Your terminal will tell you where the server is ready - for me this is http://localhost:8888 but it may differ on your machine. You can go to that address and access a local version of Argent. 
