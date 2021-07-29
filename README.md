@@ -13,9 +13,12 @@ To run Argent locally, create an account with [Polygon](https://polygon.io/) and
 
 Create a .env file in the root folder and add POLYGON_API_KEY=YOUR_API_KEY to the file.
 
+Install the required npm packages. 
+
 Install the Netlify CLI and run the Netlify dev command to spawn a local environment.
 
 ```
+npm i 
 npm install netlify-cli-g
 netlify dev
 ```
@@ -192,5 +195,7 @@ Using the switch, the user can toggle to view the previous day's OHLC for their 
 
 ![Argent's previous day stock price information page showing two-column layout with bar chart.](https://i.imgur.com/J6dk3wX.png)
 
-### Accessibility
+### Accessibility & Performance
+
+Argent's accessibility was improved through the usage of [Contrast Checker](https://webaim.org/resources/contrastchecker/) to confirm WCAG AA compliance for the color scheme text and UI components. Lighthouse was used to identify the need for lazy loading the splash image. Additional testing was done using the Voiceover application on Mac to improve labeling of UI components and images for screen readers. 
 
