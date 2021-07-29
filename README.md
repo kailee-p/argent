@@ -76,7 +76,7 @@ Argent was built on top of Create React App and retains some of CRA's starter fo
 │   │ └── ...                             
 │   ├── images                          # contains splash image
 │   │ └── ... 
-│   ├── interfaces                      # contains any reused or bulky interfaces to be imported into components
+│   ├── interfaces                      # contains any reused or verbose interfaces for importing into components
 │   │ └── ... 
 │   ├── models                          # Netlify serverless functions that interact with Polygon API endpoints
 │   │   ├── getCompanyInfo.ts
@@ -116,6 +116,7 @@ Retrieves the most recent prices for the ticker symbol.
 **Example**
 
 ```
+GET Request
 https://api.polygon.io/v2/last/nbbo/{tickerSymbol}?&apiKey={APIKey}
 ```
 
@@ -123,28 +124,38 @@ https://api.polygon.io/v2/last/nbbo/{tickerSymbol}?&apiKey={APIKey}
 
 ```
 {
- "request_id": request id assigned by server,
+ "request_id": request id assigned by server.
  "results": {
-  "P": ask price (price a seller will sell at)
-  "S": ask size (number of round lot orders at given ask price)
-  "T": exchange symbol the stock is traded under
-  "X": Ask Exchange ID
-  "p": bid price (price a buyer will buy at)
-  "q": sequence number, represents sequence in which message events happened
-  "s": bid size (number of round lot orders at given bid price)
-  "t": nanosecond accuracy SIP Unix Timestamp
-  "x": Bid Exchange ID
-  "y": nanosecond accuracy Participant/Exchange Unix Timestamp
-  "z": defines which exchange the ticker is listed on (1 = NYSE, 2 = NYSE ARCA/NYSE American, 3 = NASDAQ)
+  "P": ask price (price a seller will sell at).
+  "S": ask size (number of round lot orders at given ask price).
+  "T": exchange symbol the stock is traded under.
+  "X": Ask Exchange ID.
+  "p": bid price (price a buyer will buy at).
+  "q": sequence number, represents sequence in which message events happened.
+  "s": bid size (number of round lot orders at given bid price).
+  "t": nanosecond accuracy SIP Unix Timestamp.
+  "x": Bid Exchange ID.
+  "y": nanosecond accuracy Participant/Exchange Unix Timestamp.
+  "z": defines which exchange the ticker is listed on (1 = NYSE, 2 = NYSE ARCA/NYSE American, 3 = NASDAQ).
  },
- "status": status of request's response
+ "status": status of request's response.
 }
 ```
 
 ## Design Process
 
+The initial wireframes for Argent, done in Google Jamboard, envisioned an application with two pages, a splash page and a page with company and stock information. Different features like buttons to export data were considered.
+
+![Initial wireframe of splash page.](https://i.imgur.com/xmCfALX.png)
+
+![Initial wireframe of company and stock information page.](https://i.imgur.com/gqENhOr.png)
+
+However, after reviewing scope, the final functionality of Argent was narrowed to showing only company information and stock information (current and previous day's prices), using switches and tabs to toggle between views. The two-column layout no longer displays company and stock information, but is utilized to show numerical stock prices and the corresponding bar graphs on the right hand side. 
+
 ### User Flow
 
 Screenshots of each View and descriptions of the overall user flow as well as any place that you made distinct design decisions.  (Screenshots can be taken via any screenshot capture application or native methods).
 
+
 ### Accessibility
+
