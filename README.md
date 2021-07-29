@@ -20,7 +20,7 @@ npm install netlify-cli-g
 netlify dev
 ```
 
-Your terminal will tell you where the server is ready - for me this is usually http://localhost:8888 but it may differ on your machine. You can go to that address and access a local version of Argent. 
+Your terminal will tell you where the server is ready - for me this is http://localhost:8888 but it may differ on your machine. You can go to that address and access a local version of Argent. 
 
 ## Architectural Requirements
 
@@ -28,19 +28,46 @@ Your terminal will tell you where the server is ready - for me this is usually h
 Argent is written in React.js with TypeScript. 
 
 ### Minimum 3 User Interactions
+Argent has **7 of 3** required user interaction points, as detailed in the images below. 
 
+![Argent splash page showing 3 user interactions in the logo, front page button, and footer section.](https://i.imgur.com/bJX5JVd.png)
+
+![Page from Argent showing the search bar and company information component with user interactions in the search bar and in the company information section.](https://i.imgur.com/k8WUB4J.png)
+
+![Page from Argent showing the search bar and stock information components, including the tabs that toggle views and the switch that also toggles views.](https://i.imgur.com/oldJqe0.png)
 
 ### Specified Architectural Pattern
-
-MVC, architectural overview, and file structure go here
-document backend routes and at least 1 Polygon API route
+Argent uses the MVC pattern. 
 
 ### Integration with 3rd Party RESTful API
 Argent makes fetch calls to [Polygon](https://polygon.io/) for company and stock information. 
 
 ### Minimum 5 material-ui/@core Components
+Argent utilizes **6 of 5** required MaterialUI components.
+
+1. [Text Field](https://material-ui.com/components/text-fields/) to receive input in the search bar.
+2. [Tabs](https://material-ui.com/components/tabs/#tabs) to flip between company and stock information sections.
+3. [Switch](https://material-ui.com/components/switches/#switch) to toggle between today's and previous day's stock prices.
+4. [Tooltip](https://material-ui.com/components/tooltips/#tooltip) to add context on mouseover to the icon that directs the user to a company's site.
+5. [Lists](https://material-ui.com/components/lists/#lists) to display the stock and company information retrieved from the API.
+6. [Dividers](https://material-ui.com/components/dividers/#divider) to help divide list content.
+
+![Argent page showing the text field, divider, list, and tooltip](https://i.imgur.com/HIHsaGW.png)
+
+![Argent page showing the tabs and switch](https://i.imgur.com/HIHsaGW.png)
 
 ### Example of Reusable UI Component
 
+
+
+## Architecture Overview
+MVC, architectural overview, and file structure go here
+document backend routes and at least 1 Polygon API route
+
 ## Design Process
 
+## User Flow
+
+Screenshots of each View and descriptions of the overall user flow as well as any place that you made distinct design decisions.  (Screenshots can be taken via any screenshot capture application or native methods).
+
+## Accessibility
