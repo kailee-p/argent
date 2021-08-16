@@ -5,8 +5,6 @@ A full stack application that retrieves company and stock information for the us
 Argent is a full stack application with a React/TypeScript frontend and Netlify serverless functions that leverages the [Polygon](https://polygon.io/) stock API to retrieve company and stock information based on the selected ticker symbol.
 
 ## Getting Started
-Argent can be viewed here: https://argent-2021.netlify.app/#/
-
 To run Argent locally, create an account with [Polygon](https://polygon.io/) and obtain an API key. 
 
 **NOTE:** This application was built with the **Stocks Starter tier API key**, which allows for **unlimited API calls**. This application is **untested** with the Stocks Basic tier and may have **limited or missing functionality** if you choose to use that tier.
