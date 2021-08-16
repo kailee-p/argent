@@ -7,7 +7,9 @@ Argent is a full stack application with a React/TypeScript frontend and Netlify 
 ## Getting Started
 To run Argent locally, create an account with [Polygon](https://polygon.io/) and obtain an API key. 
 
-**NOTE:** This application was built with the **Stocks Starter tier API key**, which allows for **unlimited API calls**. This application is **untested** with the Stocks Basic tier and may have **limited or missing functionality** if you choose to use that tier.
+**NOTE:** This application was built with the **Stocks Starter tier API key**, which allows for **unlimited API calls**. This application is **untested** with the Stocks Basic tier and may have **limited or missing functionality** if you choose to use that tier. 
+
+You can access a live hosted version of Argent at https://argent-2021.netlify.app/#/. **NOTE:** As of **August 23, 2021**, Argent will be downgraded to the Stocks Basic tier (free), meaning it may have **limited or missing functionality** due to being originally created using the Stocks Starter tier API subscription. 
 
 Fork and clone this repository to your local machine and open it. 
 
@@ -45,7 +47,7 @@ Argent has **7 of 3** required user interaction points, as detailed in the image
 ![Page from Argent showing the search bar and stock information components, including the tabs that toggle views and the switch that also toggles views.](https://i.imgur.com/oldJqe0.png)
 
 ### Specified Architectural Pattern
-Argent uses the MVC pattern. /models contains the Netlify serverless functions that directly interact with the Polygon API. /controllers contains the functionst hat handle responses and requests to the models from the frontend. /views contains the React components that render the frontend UI. 
+Argent uses the MVC pattern. /models contains the Netlify serverless functions that directly interact with the Polygon API. /controllers contains the functions that handle responses and requests to the models from the frontend. /views contains the React components that render the frontend UI. 
 
 ### Integration with 3rd Party RESTful API
 Argent makes calls to [Polygon](https://polygon.io/) for company and stock information. 
